@@ -361,3 +361,98 @@ body.noscroll { overflow: hidden; }
   .hero-illust { order: -1; }
   .hero-illust-placeholder { max-width: 260px; }
 }
+
+/* ================================================
+   3ポイント
+================================================ */
+.points { background: var(--color-bg); }
+
+.points-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.point-item {
+  background: var(--color-white);
+  border-radius: 16px;
+  padding: 32px 24px;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+
+.point-icon {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+
+.point-item h3 {
+  font-size: 1.1rem;
+  color: var(--color-primary);
+  margin-bottom: 12px;
+}
+
+.point-item p { font-size: 0.9rem; color: var(--color-muted); }
+
+/* ================================================
+   事業カード（トップ）
+================================================ */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.service-card {
+  border: 2px solid var(--color-border);
+  border-radius: 16px;
+  padding: 32px 24px;
+  text-align: center;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.service-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 8px 24px rgba(59,125,216,0.12);
+}
+
+.service-card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+
+.service-card h3 {
+  font-size: 1rem;
+  color: var(--color-text);
+  margin-bottom: 12px;
+}
+
+.service-card p { font-size: 0.875rem; color: var(--color-muted); }
+
+/* ================================================
+   CTA帯
+================================================ */
+.cta-band {
+  background: var(--color-primary);
+  color: var(--color-white);
+  text-align: center;
+  padding: 64px 24px;
+}
+
+.cta-band h2 {
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+}
+
+.cta-band p {
+  opacity: 0.85;
+  margin-bottom: 32px;
+  font-size: 0.95rem;
+}
+
+/* レスポンシブ */
+@media (max-width: 767px) {
+  .points-grid,
+  .services-grid { grid-template-columns: 1fr; }
+  .cta-band h2 { font-size: 1.4rem; }
+}
