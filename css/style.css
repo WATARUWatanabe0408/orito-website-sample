@@ -16,6 +16,7 @@
   --max-width: 1100px;
   --space-section: 80px;
   --color-muted: #888888;
+  --color-primary-light: #EBF2FF;
 }
 
 /* リセット */
@@ -286,12 +287,16 @@ body.noscroll { overflow: hidden; }
   .footer-inner { flex-direction: column; gap: 6px; }
 }
 
+/* ヘッダーが fixed のため全ページのmainにオフセット */
+main {
+  padding-top: 68px;
+}
+
 /* ================================================
    ヒーロー
 ================================================ */
 .hero {
-  padding-top: 68px; /* ヘッダー分のオフセット */
-  min-height: 100vh;
+  min-height: calc(100vh - 68px);
   display: flex;
   align-items: center;
   background: var(--color-white);
@@ -309,7 +314,7 @@ body.noscroll { overflow: hidden; }
 
 .hero-tag {
   display: inline-block;
-  background: #EBF2FF;
+  background: var(--color-primary-light);
   color: var(--color-primary);
   font-size: 0.8rem;
   font-weight: 700;
@@ -342,7 +347,7 @@ body.noscroll { overflow: hidden; }
   width: 100%;
   aspect-ratio: 1;
   max-width: 460px;
-  background: #EBF2FF;
+  background: var(--color-primary-light);
   border-radius: 24px;
   margin: 0 auto;
 }
