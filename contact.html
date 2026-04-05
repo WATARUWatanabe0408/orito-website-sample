@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>お問い合わせ｜株式会社オリト</title>
+  <meta name="description" content="株式会社オリトへのお問い合わせはこちらから。">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header" id="header">
+  <div class="container header-inner">
+    <a href="index.html" class="header-logo">
+      <span class="logo-text">株式会社オリト</span>
+    </a>
+    <button class="hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="header-nav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="header-nav" id="header-nav">
+      <ul>
+        <li><a href="company.html">会社概要</a></li>
+        <li><a href="service.html">事業内容</a></li>
+        <li><a href="contact.html" class="nav-contact">お問い合わせ</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main style="padding-top: 68px;">
+
+  <div class="page-header">
+    <h1>お問い合わせ</h1>
+    <p>Contact</p>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="contact-wrap">
+        <p class="contact-lead fade-up">製品のお見積もり・在庫確認・出張製作のご依頼など、お気軽にお問い合わせください。</p>
+
+        <form class="contact-form fade-up" action="https://formspree.io/f/xxxxxxxx" method="POST">
+
+          <div class="form-group">
+            <label for="company">会社名</label>
+            <input type="text" id="company" name="company" placeholder="例：株式会社〇〇">
+          </div>
+
+          <div class="form-group">
+            <label for="name">お名前 <span class="required">必須</span></label>
+            <input type="text" id="name" name="name" required placeholder="例：山田 太郎">
+          </div>
+
+          <div class="form-group">
+            <label for="email">メールアドレス <span class="required">必須</span></label>
+            <input type="email" id="email" name="email" required placeholder="例：example@email.com">
+          </div>
+
+          <div class="form-group">
+            <label for="message">お問い合わせ内容 <span class="required">必須</span></label>
+            <textarea id="message" name="message" required rows="7" placeholder="お問い合わせ内容をご記入ください"></textarea>
+          </div>
+
+          <div class="form-submit">
+            <button type="submit" class="btn btn-primary">送信する</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <p class="footer-name">株式会社オリト</p>
+    <p class="footer-address">〒000-0000 住所をここに入れる</p>
+    <p class="footer-tel">TEL: 000-0000-0000</p>
+  </div>
+  <div class="footer-copy">
+    <p>Copyright &copy; 株式会社オリト All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
