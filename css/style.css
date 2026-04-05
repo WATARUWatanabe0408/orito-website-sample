@@ -330,7 +330,7 @@ body.noscroll { overflow: hidden; }
 .hero-desc {
   font-size: 0.95rem;
   line-height: 1.9;
-  color: #666;
+  color: var(--color-muted);
   margin-bottom: 32px;
 }
 
