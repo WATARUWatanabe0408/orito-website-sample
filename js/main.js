@@ -19,9 +19,10 @@ const nav = document.querySelector('.header-nav');
 
 if (hamburger && nav) {
   hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('is-open');
+    const isOpen = hamburger.classList.toggle('is-open');
     nav.classList.toggle('is-open');
     document.body.classList.toggle('noscroll');
+    hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   });
 
   // ナビリンクをクリックしたらメニューを閉じる

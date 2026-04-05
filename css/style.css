@@ -181,18 +181,18 @@ body.noscroll { overflow: hidden; }
 
 .header-nav a:hover { color: var(--color-primary); }
 
-.nav-contact {
+.header-nav a.nav-contact {
   background: var(--color-primary);
-  color: var(--color-white) !important;
+  color: var(--color-white);
   padding: 8px 20px;
   border-radius: 50px;
-  font-weight: 700 !important;
-  transition: background 0.2s !important;
+  font-weight: 700;
+  transition: background 0.2s;
 }
 
-.nav-contact:hover {
-  background: var(--color-accent) !important;
-  color: var(--color-white) !important;
+.header-nav a.nav-contact:hover {
+  background: var(--color-accent);
+  color: var(--color-white);
 }
 
 /* ハンバーガー */
