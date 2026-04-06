@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>株式会社オリト｜高圧ホース・油圧機器の卸販売</title>
+  <meta name="description" content="株式会社オリトは高圧ホース・口金・カプラ・油圧機器の卸販売および高圧ホース出張製作を行っています。">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="index.html" class="header-logo">ORITO</a>
+    <button class="hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="header-nav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="header-nav" id="header-nav">
+      <ul>
+        <li><a href="company.html">会社概要</a></li>
+        <li><a href="service.html">事業内容</a></li>
+        <li><a href="contact.html" class="nav-cta">お問い合わせ</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ① HERO -->
+<section class="hero">
+  <div class="hero-bg-glow hero-bg-glow--1"></div>
+  <div class="hero-bg-glow hero-bg-glow--2"></div>
+  <div class="container hero-inner">
+    <div class="hero-text" id="hero-text">
+      <p class="hero-badge">HIGH PRESSURE HOSE SPECIALIST</p>
+      <h1 class="hero-title">現場を支える<br>確かな製品を。</h1>
+      <p class="hero-desc">高圧ホース・口金・カプラ・継手類・油圧機器の卸販売から<br>出張製作まで、オリトにお任せください。</p>
+      <a href="contact.html" class="btn-primary">お問い合わせはこちら →</a>
+    </div>
+    <div class="hero-illust" id="hero-illust">
+      <div class="hero-illust-placeholder">
+        <div class="illust-glow"></div>
+        <div class="illust-emoji">⚙️</div>
+        <div class="illust-emoji illust-emoji--2">🔩</div>
+        <div class="illust-emoji illust-emoji--3">🏭</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ② 数字で見るオリト -->
+<section class="numbers-section">
+  <div class="container">
+    <h2 class="section-title">数字で見るオリト</h2>
+    <p class="section-sub">Numbers</p>
+    <div class="numbers-grid">
+      <div class="number-item">
+        <div class="number-value">
+          <span class="count" data-target="500">0</span><span class="number-unit">+</span>
+        </div>
+        <div class="number-label">取扱製品数</div>
+      </div>
+      <div class="number-item">
+        <div class="number-value">
+          <span class="count" data-target="30">0</span><span class="number-unit">年</span>
+        </div>
+        <div class="number-label">の実績</div>
+      </div>
+      <div class="number-item">
+        <div class="number-value">
+          <span class="count" data-target="100">0</span><span class="number-unit">%</span>
+        </div>
+        <div class="number-label">出張製作対応率</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ③ 事業内容 -->
+<section class="services-section">
+  <div class="container">
+    <h2 class="section-title">事業内容</h2>
+    <p class="section-sub">Services</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-card-icon">🔩</div>
+        <h3>高圧ホース・各種部材の卸販売</h3>
+        <p>口金・カプラ・スイベル・継手類など幅広い製品を取り扱っています。</p>
+        <div class="card-glow"></div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-icon">⚙️</div>
+        <h3>アッセンブリーマシーン販売</h3>
+        <p>高圧ホースアッセンブリーマシーンの販売を行っています。</p>
+        <div class="card-glow"></div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-icon">🚗</div>
+        <h3>高圧ホース出張製作</h3>
+        <p>現地でのホース製作に対応。現場のニーズに合わせて柔軟に対応します。</p>
+        <div class="card-glow"></div>
+      </div>
+    </div>
+    <div class="services-more">
+      <a href="service.html" class="btn-outline">事業内容をすべて見る →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ④ CTA -->
+<section class="cta-section">
+  <canvas id="particles-canvas"></canvas>
+  <div class="container cta-inner">
+    <h2>まずはお気軽にご相談ください</h2>
+    <p>高圧ホース・油圧機器に関するご質問・お見積もりはお気軽にどうぞ。</p>
+    <a href="contact.html" class="btn-primary">お問い合わせはこちら →</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <p class="footer-name">株式会社オリト</p>
+    <p class="footer-info">〒000-0000 住所をここに入力 ｜ TEL: 000-0000-0000</p>
+  </div>
+  <div class="footer-copy">
+    <p>Copyright &copy; 株式会社オリト All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
