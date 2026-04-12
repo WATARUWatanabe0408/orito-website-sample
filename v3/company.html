@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>会社概要 - 株式会社オリト</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+JP:wght@400;500;700;800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
+  <script src="css/tailwind-config.js"></script>
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/company.css">
+</head>
+<body class="bg-bg-base text-text-main">
+
+<!-- Navbar（index.html と同一構造・active リンクのみ変更） -->
+<div class="sticky top-0 z-50 px-6 md:px-12 lg:px-16 pt-4 pb-2 bg-bg-base/80" style="backdrop-filter:blur(8px);">
+  <nav class="liquid-glass rounded-xl px-4 py-2 flex items-center justify-between">
+    <a href="index.html" class="text-2xl font-semibold tracking-tight text-white" style="font-family:'Inter',sans-serif;">ORITO</a>
+    <div class="hidden md:flex items-center gap-8">
+      <a href="index.html"   class="text-sm text-white/70 hover:text-white transition-colors">トップ</a>
+      <a href="service.html" class="text-sm text-white/70 hover:text-white transition-colors">サービス</a>
+      <a href="company.html" class="text-sm text-white border-b border-white/40 pb-0.5">会社概要</a>
+      <a href="contact.html" class="text-sm text-white/70 hover:text-white transition-colors">お問い合わせ</a>
+    </div>
+    <div class="flex items-center gap-3">
+      <a href="contact.html" class="hidden md:inline-block bg-white text-black px-5 py-2 rounded-lg text-sm font-medium hover:bg-gray-100 transition-colors" style="font-family:'Inter',sans-serif;">お問い合わせ</a>
+      <button data-hamburger class="md:hidden flex flex-col gap-1.5 p-2" aria-label="メニューを開く" aria-expanded="false">
+        <span class="w-5 h-0.5 bg-white block"></span>
+        <span class="w-5 h-0.5 bg-white block"></span>
+        <span class="w-5 h-0.5 bg-white block"></span>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-nav liquid-glass mt-2 rounded-xl px-4 py-4">
+    <ul class="space-y-3">
+      <li><a href="index.html"   class="text-sm text-white/70">トップ</a></li>
+      <li><a href="service.html" class="text-sm text-white/70">サービス</a></li>
+      <li><a href="company.html" class="text-sm text-white">会社概要</a></li>
+      <li><a href="contact.html" class="text-sm text-white/70">お問い合わせ</a></li>
+    </ul>
+  </div>
+</div>
+
+<main>
+
+<!-- ページ Hero（60vh） -->
+<section class="relative flex items-end overflow-hidden" style="min-height:60vh;">
+  <div class="page-hero-bg" aria-hidden="true"></div>
+  <div class="relative z-10 max-w-7xl mx-auto px-8 w-full pb-16 md:pb-20">
+    <span class="text-xs font-bold tracking-[0.3em] uppercase text-primary mb-4 block" style="font-family:'Inter',sans-serif;">私たちについて</span>
+    <h1 data-char-animate class="font-black mb-6 leading-tight" style="font-family:'Inter','Noto Sans JP',sans-serif;font-size:clamp(3rem,8vw,6rem);letter-spacing:-0.04em;">
+      <span data-line="会社概要" class="block"></span>
+    </h1>
+    <p class="text-xl text-text-sub max-w-2xl leading-loose font-medium" data-fade-delay="600">
+      こだわりを通じて、油圧分野の卓越性を追求し続けています。
+    </p>
+  </div>
+</section>
+
+<!-- 会社データ -->
+<section class="section-surface py-golden-lg">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-black tracking-wide mb-6 reveal">会社データ</h2>
+      <div class="teal-divider reveal" data-delay="100"></div>
+    </div>
+    <div class="dark-card rounded-[3rem] max-w-4xl mx-auto overflow-hidden reveal">
+      <div class="divide-y" style="border-color:rgba(255,255,255,0.06);">
+        <div class="py-8 px-12 grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+          <span class="text-xs font-bold text-text-sub tracking-[0.2em] uppercase" style="font-family:'Inter',sans-serif;">社名</span>
+          <span class="md:col-span-2 text-xl font-bold">株式会社オリト</span>
+        </div>
+        <div class="py-8 px-12 grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+          <span class="text-xs font-bold text-text-sub tracking-[0.2em] uppercase" style="font-family:'Inter',sans-serif;">代表者</span>
+          <span class="md:col-span-2 text-xl">折戸　尭</span>
+        </div>
+        <div class="py-8 px-12 grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+          <span class="text-xs font-bold text-text-sub tracking-[0.2em] uppercase" style="font-family:'Inter',sans-serif;">設立</span>
+          <span class="md:col-span-2 text-xl">yyyy年mm月dd日</span>
+        </div>
+        <div class="py-8 px-12 grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+          <span class="text-xs font-bold text-text-sub tracking-[0.2em] uppercase" style="font-family:'Inter',sans-serif;">資本金</span>
+          <span class="md:col-span-2 text-xl">万円</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- アクセス -->
+<section class="section-dark py-golden-lg">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-black tracking-wide mb-6 reveal">アクセス</h2>
+      <div class="teal-divider reveal" data-delay="100"></div>
+    </div>
+    <div class="dark-card rounded-[3rem] overflow-hidden max-w-5xl mx-auto reveal">
+      <div class="grid grid-cols-1 lg:grid-cols-2">
+        <div class="p-14 flex flex-col justify-center">
+          <div class="flex items-center gap-5 mb-8">
+            <div class="bg-primary/10 p-4 rounded-2xl">
+              <span class="material-symbols-outlined text-primary scale-125">location_on</span>
+            </div>
+            <h3 class="text-2xl font-bold">オリト 本社</h3>
+          </div>
+          <p class="text-text-sub text-lg mb-10 leading-loose">
+            〒123-4567 東京都千代田区大手町 1-2-3<br>
+            オリトビル 4F
+          </p>
+          <a href="https://maps.google.com" target="_blank" rel="noopener"
+             class="inline-flex items-center justify-center gap-3 bg-primary text-black px-8 py-4 rounded-xl font-bold hover:opacity-90 transition-all w-fit shadow-lg" style="font-family:'Inter',sans-serif;">
+            <span class="material-symbols-outlined">map</span>
+            Google マップで開く
+          </a>
+        </div>
+        <div class="map-placeholder" style="min-height:400px;">
+          <span class="material-symbols-outlined text-5xl mb-4">map</span>
+          Map Area
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="section-surface border-t border-white/5 py-16">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="flex flex-col items-center">
+      <div class="text-2xl font-semibold tracking-[0.2em] text-primary mb-10" style="font-family:'Inter',sans-serif;">ORITO</div>
+      <nav>
+        <ul class="flex flex-wrap justify-center gap-10 text-center max-w-xl mx-auto">
+          <li><a href="index.html"   class="text-sm text-text-sub hover:text-primary transition-colors font-bold tracking-wide">トップ</a></li>
+          <li><a href="service.html" class="text-sm text-text-sub hover:text-primary transition-colors font-bold tracking-wide">サービス</a></li>
+          <li><a href="company.html" class="text-sm text-white font-bold tracking-wide">会社概要</a></li>
+          <li><a href="contact.html" class="text-sm text-text-sub hover:text-primary transition-colors font-bold tracking-wide">お問い合わせ</a></li>
+        </ul>
+      </nav>
+      <div class="mt-12 text-text-sub text-[10px] tracking-[0.3em] uppercase font-bold">
+        <p>© 株式会社オリト ALL RIGHTS RESERVED.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
