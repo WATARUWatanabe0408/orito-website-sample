@@ -1,0 +1,13 @@
+.py-golden-xl { padding-top: 10.6rem; padding-bottom: 10.6rem; }
+.service-cta-bg {
+  background: linear-gradient(135deg, #0f6765 0%, #0a4f4e 100%);
+  position: relative;
+  overflow: hidden;
+}
+.service-cta-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 28px 28px;
+}

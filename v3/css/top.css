@@ -1,0 +1,39 @@
+.py-golden-xl  { padding-top: 10.6rem; padding-bottom: 10.6rem; }
+.py-golden-lg  { padding-top:  6.5rem; padding-bottom:  6.5rem; }
+.mb-golden-md  { margin-bottom: 4rem; }
+.mb-golden-sm  { margin-bottom: 2.5rem; }
+.gap-golden    { gap: 4rem; }
+
+/* 選ばれる理由 — 右側 CSS 装飾 */
+.strength-deco {
+  background:
+    radial-gradient(circle at 35% 40%, rgba(45,212,191,0.12) 0%, transparent 55%),
+    radial-gradient(circle at 70% 70%, rgba(15,103,101,0.3)  0%, transparent 50%),
+    #0e1614;
+  border-radius: 4rem;
+  position: relative;
+  overflow: hidden;
+  min-height: 380px;
+}
+.strength-deco::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(45,212,191,0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* 会社案内 — 右側 CSS 装飾 */
+.company-brief-deco {
+  background: linear-gradient(135deg, #0f6765 0%, #080d0c 100%);
+  position: relative;
+  overflow: hidden;
+  min-height: 300px;
+}
+.company-brief-deco::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(45,212,191,0.15) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
