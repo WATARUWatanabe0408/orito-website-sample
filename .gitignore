@@ -7,5 +7,7 @@
 # Claude Code
 .superpowers/
 
-# 旧テンプレート（公開対象外）
+# 旧テンプレート・旧バージョン（公開対象外）
 legacy/
+v2/
+v3/
