@@ -1,0 +1,11 @@
+# macOS
+.DS_Store
+
+# エディタ
+.vscode/
+
+# Claude Code
+.superpowers/
+
+# 旧テンプレート（公開対象外）
+legacy/

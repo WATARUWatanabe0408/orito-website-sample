@@ -31,7 +31,7 @@ v2/
     ├── index.html
     ├── company.html
     ├── service.html
-    ├── contact.html
+    ├── contact.html 
     ├── css/style.css
     └── js/main.js
 ```
