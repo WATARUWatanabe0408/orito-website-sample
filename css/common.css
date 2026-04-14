@@ -1,0 +1,44 @@
+/* ================================================
+   共通スタイル（全ページで使用）
+================================================ */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ================================================
+   スクロール出現アニメーション
+================================================ */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Material Symbols アイコン設定 */
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* ベースフォント・字間 */
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    letter-spacing: 0.05em;
+}
+
+h1, h2, h3 {
+    font-family: 'Noto Sans JP', sans-serif;
+    letter-spacing: 0.08em;
+}
+
+/* テクニカルラベル（小見出し・ラベル用） */
+.technical-label {
+    font-family: 'Noto Sans JP', sans-serif;
+    letter-spacing: 0.15em;
+}

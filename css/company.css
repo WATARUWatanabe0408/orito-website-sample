@@ -1,0 +1,31 @@
+/* ================================================
+   会社概要ページ固有スタイル
+   黄金比（1:1.618）ベースのスペーシング
+================================================ */
+
+/* 大きなセクション上下パディング（162px） */
+.py-golden-lg {
+    padding-top: 10.125rem;
+    padding-bottom: 10.125rem;
+}
+
+/* 中程度のセクション上下パディング（104px） */
+.py-golden-md {
+    padding-top: 6.5rem;
+    padding-bottom: 6.5rem;
+}
+
+/* 小マージン下（39px） */
+.mb-golden-sm {
+    margin-bottom: 2.4375rem;
+}
+
+/* 大マージン下（65px） */
+.mb-golden-lg {
+    margin-bottom: 4.0625rem;
+}
+
+/* 要素間ギャップ（65px） */
+.gap-golden {
+    gap: 4.0625rem;
+}

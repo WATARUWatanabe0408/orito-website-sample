@@ -1,125 +1,210 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html class="light" lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>株式会社オリト｜高圧ホース・油圧機器の卸販売</title>
-  <meta name="description" content="株式会社オリトは高圧ホース・口金・カプラ・油圧機器の卸販売および高圧ホース出張製作を行っています。">
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>株式会社オリト | 油圧と高圧ホースのスペシャリスト</title>
+<script src="css/tailwind-config.js"></script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/common.css"/>
+<link rel="stylesheet" href="css/top.css"/>
 </head>
-<body>
+<body class="bg-surface text-on-surface tracking-wider">
 
-<!-- ヘッダー -->
-<header class="header" id="header">
-  <div class="container header-inner">
-    <a href="index.html" class="header-logo">
-      <span class="logo-text">株式会社オリト</span>
-    </a>
-    <button class="hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="header-nav">
-      <span></span><span></span><span></span>
-    </button>
-    <nav class="header-nav" id="header-nav">
-      <ul>
-        <li><a href="company.html">会社概要</a></li>
-        <li><a href="service.html">事業内容</a></li>
-        <li><a href="contact.html" class="nav-contact">お問い合わせ</a></li>
-      </ul>
-    </nav>
+<!-- TopNavBar -->
+<nav class="docked full-width top-0 sticky z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(15,103,101,0.06)]">
+  <div class="max-w-7xl mx-auto px-8 flex justify-between items-center h-20">
+    <a href="index.html" class="text-2xl font-bold tracking-widest text-[#428D8B]">ORITO</a>
+    <!-- Desktop Nav -->
+    <div class="hidden md:flex items-center space-x-10 font-bold tracking-wider">
+      <a class="text-[#428D8B] border-b-2 border-[#428D8B] pb-1" href="index.html">トップ</a>
+      <a class="text-slate-600 dark:text-slate-400 hover:text-[#428D8B] transition-colors" href="service.html">サービス</a>
+      <a class="text-slate-600 dark:text-slate-400 hover:text-[#428D8B] transition-colors" href="company.html">会社概要</a>
+      <a class="text-slate-600 dark:text-slate-400 hover:text-[#428D8B] transition-colors" href="contact.html">お問い合わせ</a>
+    </div>
+    <!-- Mobile Toggle -->
+    <div class="md:hidden">
+      <span class="material-symbols-outlined text-primary text-3xl">menu</span>
+    </div>
   </div>
-</header>
+</nav>
 
-<!-- メインコンテンツ（後のタスクで追加） -->
 <main>
 
-<!-- ヒーロー -->
-<section class="hero">
-  <div class="container hero-inner">
-    <div class="hero-text">
-      <p class="hero-tag">高圧ホース・油圧機器の専門商社</p>
-      <h1 class="hero-title">現場を支える<br>確かな製品を、<br>迅速にお届けします。</h1>
-      <p class="hero-desc">高圧ホース・口金・カプラ・継手類・油圧機器の卸販売から<br>出張製作まで、オリトにお任せください。</p>
-      <a href="contact.html" class="btn btn-primary">お問い合わせはこちら</a>
+  <!-- Hero Section -->
+  <section class="hero-bg relative min-h-[800px] flex items-center overflow-hidden">
+    <div class="max-w-7xl mx-auto px-8 w-full relative z-10 py-golden-xl">
+      <div class="max-w-3xl space-y-10">
+        <h1 class="reveal text-5xl lg:text-7xl font-black tracking-tight leading-[1.3] text-on-surface" style="transition-delay: 0s;">
+          油圧と高圧ホースの<br/>
+          <span class="text-primary">スペシャリスト</span><br/>
+          株式会社オリト
+        </h1>
+        <p class="reveal text-lg text-on-surface-variant max-w-xl leading-[1.8] font-bold tracking-wide" style="transition-delay: 0.2s;">
+          創業より培った確かな技術と、豊富な在庫ラインナップで、あらゆる産業の「流れ」を支えます。即納・即製。現場の課題を迅速に解決します。
+        </p>
+        <div class="reveal flex flex-wrap gap-6 pt-4" style="transition-delay: 0.4s;">
+          <a href="#strength" class="inline-flex items-center gap-2 rounded-xl px-10 py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary font-black tracking-widest shadow-lg shadow-primary/20 hover:opacity-90 transition-all">
+            選ばれる理由
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </a>
+          <a href="service.html" class="inline-flex items-center gap-2 rounded-xl px-10 py-4 bg-white/80 backdrop-blur-sm border border-surface-container-highest text-on-surface font-black tracking-widest hover:bg-white transition-colors shadow-lg">
+            サービス一覧
+          </a>
+        </div>
+      </div>
     </div>
-    <div class="hero-illust">
-      <!-- イラスト素材入手後に <img> タグで差し替え -->
-      <div class="hero-illust-placeholder"></div>
-    </div>
-  </div>
-</section>
+    <div class="absolute bottom-0 inset-x-0 h-48 bg-gradient-to-b from-transparent to-surface-container-low z-[5] pointer-events-none"></div>
+  </section>
 
-<!-- 3つのポイント -->
-<section class="section points">
-  <div class="container">
-    <h2 class="section-title fade-up">オリトの強み</h2>
-    <p class="section-subtitle fade-up">Our Strengths</p>
-    <div class="points-grid">
-      <div class="point-item fade-up">
-        <div class="point-icon">🔧</div>
-        <h3>豊富な在庫</h3>
-        <p>高圧ホース・口金・カプラ・継手類を幅広く在庫。急ぎのご注文にも対応します。</p>
+  <!-- Service Overview -->
+  <section class="py-golden-xl bg-surface-container-low">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="text-center mb-golden-md space-y-6">
+        <h2 class="text-3xl lg:text-4xl font-black tracking-[0.15em]">事業内容</h2>
+        <div class="w-16 h-1 bg-primary mx-auto rounded-full"></div>
       </div>
-      <div class="point-item fade-up">
-        <div class="point-icon">🚗</div>
-        <h3>出張製作サービス</h3>
-        <p>現地での高圧ホース製作に対応。設備を止めずにその場でホースを製作します。</p>
-      </div>
-      <div class="point-item fade-up">
-        <div class="point-icon">📦</div>
-        <h3>迅速な納品</h3>
-        <p>お客様のお急ぎに迅速に対応。安定供給で生産ラインをサポートします。</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <!-- Card 1: Hose Fabrication -->
+        <div class="reveal group bg-surface-container-lowest p-10 rounded-[2.5rem] hover:shadow-[0_30px_60px_rgba(15,103,101,0.08)] transition-all duration-500" style="transition-delay: 0s;">
+          <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-10 group-hover:scale-110 transition-transform duration-500">
+            <span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">settings_input_component</span>
+          </div>
+          <h3 class="text-xl font-black mb-6 tracking-wide">ホース受託加工</h3>
+          <p class="text-on-surface-variant leading-relaxed text-sm font-medium tracking-wide">高圧ホースのアッセンブリ。特殊な口金や長尺ホースにも、熟練の技術者が一本一本丁寧に対応します。</p>
+        </div>
+        <!-- Card 2: Component Sales -->
+        <div class="reveal group bg-surface-container-lowest p-10 rounded-[2.5rem] hover:shadow-[0_30px_60px_rgba(15,103,101,0.08)] transition-all duration-500" style="transition-delay: 0.15s;">
+          <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-10 group-hover:scale-110 transition-transform duration-500">
+            <span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">shopping_cart</span>
+          </div>
+          <h3 class="text-xl font-black mb-6 tracking-wide">油圧機器販売</h3>
+          <p class="text-on-surface-variant leading-relaxed text-sm font-medium tracking-wide">油圧ポンプ、バルブ、継手など、国内外の主要メーカー製品を豊富にラインナップ。迅速な供給を実現します。</p>
+        </div>
+        <!-- Card 3: Technical Support -->
+        <div class="reveal group bg-surface-container-lowest p-10 rounded-[2.5rem] hover:shadow-[0_30px_60px_rgba(15,103,101,0.08)] transition-all duration-500" style="transition-delay: 0.3s;">
+          <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-10 group-hover:scale-110 transition-transform duration-500">
+            <span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">engineering</span>
+          </div>
+          <h3 class="text-xl font-black mb-6 tracking-wide">技術サポート</h3>
+          <p class="text-on-surface-variant leading-relaxed text-sm font-medium tracking-wide">機器の選定からトラブルシューティングまで。技術的な知見から、お客様の課題解決を全面的にバックアップ。</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- 事業内容ひとこと紹介 -->
-<section class="section services-top" style="background: var(--color-white);">
-  <div class="container">
-    <h2 class="section-title fade-up">事業内容</h2>
-    <p class="section-subtitle fade-up">Services</p>
-    <div class="services-grid">
-      <div class="service-card fade-up">
-        <div class="service-card-icon">🔩</div>
-        <h3>高圧ホース・各種部材の卸販売</h3>
-        <p>口金・カプラ・スイベル・継手類など幅広い製品を取り扱っています。</p>
-      </div>
-      <div class="service-card fade-up">
-        <div class="service-card-icon">⚙️</div>
-        <h3>アッセンブリーマシーン販売</h3>
-        <p>高圧ホースアッセンブリーマシーンの販売を行っています。</p>
-      </div>
-      <div class="service-card fade-up">
-        <div class="service-card-icon">🛠️</div>
-        <h3>高圧ホース出張製作</h3>
-        <p>現地でのホース製作に対応。現場のニーズに合わせて柔軟に対応します。</p>
+  <!-- Strength/Value -->
+  <section id="strength" class="py-golden-xl bg-surface overflow-hidden">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-golden items-center">
+        <div class="reveal relative">
+          <div class="absolute -top-16 -left-16 w-80 h-80 bg-secondary/5 rounded-full blur-[100px] -z-10"></div>
+          <img alt="作業中の技術者" class="rounded-[4rem] shadow-2xl relative z-10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAM8JjFpcutR7S6XVDqsW8_yoaT92ib1MOEL6k-XnJ9VtnIh2iHS6NdJKVE4vVPtyLnAAeiC8yZfSV38oQa0INuaAKcNmojbo4gCnT05y4LV098zMOQBYxOL9r3zdlAS5yyjKWKnCcNUxsejU9WjNYh6_bhOMMZrGJL7aUaDMq9PcF1h5Anc980_8hqV1C1oMl_oJehaqBZqgsLr29pAzlbqjIORJlx4JHhX5GA41PkTuTegljNmVGIU_HChjnLCePENq9gQxnLQS8"/>
+        </div>
+        <div class="space-y-12">
+          <div class="reveal">
+            <h2 class="text-3xl lg:text-4xl font-black tracking-[0.1em] mb-8">選ばれる理由</h2>
+            <p class="text-on-surface-variant leading-relaxed font-medium tracking-wide">私たちは、単なる卸売業者ではありません。現場の状況を理解し、最適なソリューションを提案するパートナーです。</p>
+          </div>
+          <div class="space-y-10">
+            <div class="reveal flex gap-8 items-start" style="transition-delay: 0.1s;">
+              <div class="bg-surface-container-high p-5 rounded-2xl flex-shrink-0">
+                <span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings: 'FILL' 1;">speed</span>
+              </div>
+              <div>
+                <h4 class="text-lg font-black mb-2 tracking-wide">圧倒的なスピード</h4>
+                <p class="text-sm text-on-surface-variant leading-relaxed font-medium tracking-wide">即日加工・即日出荷を基本とし、ダウンタイムを最小限に抑えます。緊急のトラブルにも柔軟に対応可能です。</p>
+              </div>
+            </div>
+            <div class="reveal flex gap-8 items-start" style="transition-delay: 0.2s;">
+              <div class="bg-surface-container-high p-5 rounded-2xl flex-shrink-0">
+                <span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+              </div>
+              <div>
+                <h4 class="text-lg font-black mb-2 tracking-wide">豊富な在庫力</h4>
+                <p class="text-sm text-on-surface-variant leading-relaxed font-medium tracking-wide">多種多様な口金、アダプター、ホースを常時ストック。特殊な要求にも応えられる「オリト」の底力です。</p>
+              </div>
+            </div>
+            <div class="reveal flex gap-8 items-start" style="transition-delay: 0.3s;">
+              <div class="bg-surface-container-high p-5 rounded-2xl flex-shrink-0">
+                <span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings: 'FILL' 1;">psychology</span>
+              </div>
+              <div>
+                <h4 class="text-lg font-black mb-2 tracking-wide">専門特化の知識</h4>
+                <p class="text-sm text-on-surface-variant leading-relaxed font-medium tracking-wide">油圧のプロフェッショナルが、技術的な観点から最適な製品を選定。安全で効率的なシステム運用を提案します。</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div style="text-align:center; margin-top: 40px;">
-      <a href="service.html" class="btn btn-primary fade-up">事業内容をもっと見る</a>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- CTA帯 -->
-<section class="cta-band">
-  <div class="container">
-    <h2 class="fade-up">まずはお気軽にご相談ください</h2>
-    <p class="fade-up">高圧ホース・油圧機器に関するご質問・お見積もりはお気軽にどうぞ。</p>
-    <a href="contact.html" class="btn btn-outline fade-up">お問い合わせはこちら</a>
-  </div>
-</section>
+  <!-- Company Brief -->
+  <section class="py-golden-xl bg-surface">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="reveal bg-surface-container-high rounded-[4rem] overflow-hidden flex flex-col md:flex-row shadow-sm">
+        <div class="p-16 md:p-20 flex-1 space-y-8">
+          <div class="text-primary font-black text-xs tracking-[0.3em] uppercase label-font">会社案内</div>
+          <h2 class="text-3xl font-black tracking-tight leading-snug">信頼を繋ぐ、一本のホースから</h2>
+          <p class="text-on-surface-variant leading-[1.8] font-medium tracking-wide">
+            株式会社オリトは、広島を拠点に西日本エリアの産業を支えてきました。私たちの使命は、高度な専門性と迅速な対応力で、お客様の現場を止めないことです。常に進化する技術をキャッチアップし、次世代の油圧ソリューションを提供し続けます。
+          </p>
+          <a class="inline-flex items-center gap-2 font-black text-primary group tracking-widest text-sm" href="company.html">
+            会社概要を見る
+            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
+          </a>
+        </div>
+        <div class="flex-1 min-h-[400px]">
+          <img alt="モダンなオフィス" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxRnaYdsCgCXg0MU6tpML5yCm5sE3mdUZ_4N6WEF7t0UYgeqPfHgXbU-MlEuENBKBt2QLSOTkgCokrC9ugvecX6NT3dtHwaKFdDhBanhrty9s4gEX6312NSYamvG5ZvZJwZKQ-zufZ0PP8wu_t-03mX2gKoCdG204epqhLtUDpRGlPaJ3QrVCpw8ld7FCv8ro_t4lcAsVc7F4jiNqGuToa5Di5L7rdilNdbHI28WZlikaxNE6NJsEHasXELB_731XcwxWeLagCfH4"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="py-[162px] px-8 bg-surface">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="relative overflow-hidden bg-[#e0f2f1] rounded-[4rem] shadow-sm">
+        <div class="absolute inset-0 bg-gradient-to-l from-[#b2dfdb]/50 to-transparent -z-10"></div>
+        <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-white/30 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2"></div>
+        <div class="max-w-4xl mx-auto py-20 md:py-32 text-center text-on-surface space-y-12 relative z-10">
+          <h2 class="text-4xl lg:text-7xl font-black tracking-[0.1em] leading-tight text-primary">
+            まずはお気軽に<br/>ご相談ください
+          </h2>
+          <p class="text-lg text-on-surface-variant font-medium tracking-widest leading-relaxed">製品のお見積り、技術的な相談、納期のご確認など、<br class="hidden md:block"/>専門のスタッフが丁寧にお答えします。</p>
+          <div class="flex flex-col sm:flex-row justify-center pt-4">
+            <a class="inline-flex items-center justify-center gap-2 rounded-xl px-12 py-5 text-lg bg-gradient-to-br from-primary to-primary-container text-on-primary font-black tracking-widest shadow-lg shadow-primary/20 hover:opacity-90 transition-all" href="contact.html">
+              <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">mail</span>
+              お問い合わせフォーム
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
 </main>
 
-<!-- フッター -->
-<footer class="footer">
-  <div class="container footer-inner">
-    <p class="footer-name">株式会社オリト</p>
-    <p class="footer-address">〒000-0000 住所をここに入れる</p>
-    <p class="footer-tel">TEL: 000-0000-0000</p>
-  </div>
-  <div class="footer-copy">
-    <p>Copyright &copy; 株式会社オリト All Rights Reserved.</p>
+<!-- Footer -->
+<footer class="bg-surface-container-low full-width border-t border-slate-200 dark:border-slate-800">
+  <div class="max-w-7xl mx-auto px-8 py-golden-lg">
+    <div class="flex flex-col items-center">
+      <div class="text-2xl font-black tracking-[0.2em] text-[#428D8B] mb-12">ORITO</div>
+      <nav class="w-full">
+        <ul class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0 text-center max-w-4xl mx-auto">
+          <li><a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors font-bold tracking-[0.1em] text-sm" href="index.html">トップ</a></li>
+          <li><a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors font-bold tracking-[0.1em] text-sm" href="service.html">サービス</a></li>
+          <li><a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors font-bold tracking-[0.1em] text-sm" href="company.html">会社概要</a></li>
+          <li><a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors font-bold tracking-[0.1em] text-sm" href="contact.html">お問い合わせ</a></li>
+        </ul>
+      </nav>
+      <div class="mt-16 text-center text-slate-400 dark:text-slate-500 text-[10px] tracking-[0.3em] uppercase font-bold">
+        <p>© 株式会社オリト ALL RIGHTS RESERVED.</p>
+      </div>
+    </div>
   </div>
 </footer>
 

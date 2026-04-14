@@ -1,109 +1,141 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html class="light" lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>会社概要｜株式会社オリト</title>
-  <meta name="description" content="株式会社オリトの会社概要ページです。">
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>会社概要 - 株式会社オリト</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="css/tailwind-config.js"></script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="stylesheet" href="css/common.css"/>
+<link rel="stylesheet" href="css/company.css"/>
 </head>
-<body>
+<body class="bg-surface text-on-surface tracking-wider">
 
-<header class="header" id="header">
-  <div class="container header-inner">
-    <a href="index.html" class="header-logo">
-      <span class="logo-text">株式会社オリト</span>
-    </a>
-    <button class="hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="header-nav">
-      <span></span><span></span><span></span>
-    </button>
-    <nav class="header-nav" id="header-nav">
-      <ul>
-        <li><a href="company.html">会社概要</a></li>
-        <li><a href="service.html">事業内容</a></li>
-        <li><a href="contact.html" class="nav-contact">お問い合わせ</a></li>
-      </ul>
-    </nav>
+<!-- TopNavBar -->
+<nav class="docked full-width top-0 sticky z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(15,103,101,0.06)]">
+  <div class="max-w-7xl mx-auto px-8 flex justify-between items-center h-20">
+    <a href="index.html" class="text-2xl font-bold tracking-widest text-[#428D8B]">ORITO</a>
+    <!-- Desktop Nav -->
+    <div class="hidden md:flex items-center space-x-10 font-bold tracking-wider">
+      <a class="text-slate-600 dark:text-slate-400 hover:text-[#428D8B] transition-colors" href="index.html">トップ</a>
+      <a class="text-slate-600 dark:text-slate-400 hover:text-[#428D8B] transition-colors" href="service.html">サービス</a>
+      <a class="text-[#428D8B] border-b-2 border-[#428D8B] pb-1" href="company.html">会社概要</a>
+      <a class="text-slate-600 dark:text-slate-400 hover:text-[#428D8B] transition-colors" href="contact.html">お問い合わせ</a>
+    </div>
+    <!-- Mobile Toggle -->
+    <div class="md:hidden">
+      <span class="material-symbols-outlined text-primary text-3xl">menu</span>
+    </div>
   </div>
-</header>
+</nav>
 
 <main>
 
-  <div class="page-header">
-    <h1>会社概要</h1>
-    <p>Company Profile</p>
-  </div>
+  <!-- Hero Section -->
+  <section class="relative py-golden-lg min-h-[70vh] flex items-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img alt="現代的なオフィスビルの外観" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUGRwwGAXNZxsBW3Ep_OAFm-MTLUFrehmQ9JPMaOoccJCSxqxsRGkpcSzC1ZhhHLmgw1_iTTcdQykZdXdmmW3Ij0VqbLUh-pxpCtwZ_1Nmre9uRUwi6_LwmVPqq7QtWgwOisr7dRz6yZj_S4HfdMlEdgyXHz7cI_RZTizHHjic9bFPSJZgPvPAA87wqPak6C3VAU8tDRGIEI10eYfztDugCi7TKmZf0gMTvdWZEd0z3tGdopkFl47apxS2WS9RLN5Y9YMAU9p__Wc"/>
+      <div class="absolute inset-0 bg-black/40 backdrop-blur-[2px]"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+    </div>
+    <div class="max-w-7xl mx-auto px-10 w-full relative z-10 text-white">
+      <div class="max-w-3xl">
+        <span class="technical-label text-primary-fixed font-bold uppercase text-sm mb-6 block drop-shadow-sm">私たちについて</span>
+        <h1 class="text-6xl md:text-8xl font-extrabold tracking-tighter mb-golden-sm drop-shadow-lg">会社概要</h1>
+        <p class="text-xl md:text-2xl text-white/90 max-w-2xl leading-loose font-medium drop-shadow-md">こだわりを通じて、油圧分野の卓越性を追求し続けています。</p>
+      </div>
+    </div>
+    <div class="absolute bottom-0 inset-x-0 h-48 bg-gradient-to-b from-transparent to-surface-container-low z-[5] pointer-events-none"></div>
+  </section>
 
-  <section class="section">
-    <div class="container">
-
-      <table class="company-table fade-up">
-        <tbody>
-          <tr>
-            <th>会社名</th>
-            <td>株式会社オリト</td>
-          </tr>
-          <tr>
-            <th>所在地</th>
-            <td>〒000-0000<br>住所をここに入力</td>
-          </tr>
-          <tr>
-            <th>代表者</th>
-            <td>代表者名をここに入力</td>
-          </tr>
-          <tr>
-            <th>設立</th>
-            <td>設立年月をここに入力</td>
-          </tr>
-          <tr>
-            <th>電話番号</th>
-            <td>000-0000-0000</td>
-          </tr>
-          <tr>
-            <th>FAX</th>
-            <td>000-0000-0000</td>
-          </tr>
-          <tr>
-            <th>営業時間</th>
-            <td>営業時間をここに入力</td>
-          </tr>
-          <tr>
-            <th>事業内容</th>
-            <td>
-              高圧ホース・口金・カプラ・スイベル・各種ホースの卸販売<br>
-              高圧ホースアッセンブリーマシーンの販売<br>
-              各種継手類の卸販売<br>
-              高圧ホースの出張製作業務<br>
-              洗浄用ホース・ノズル他の卸販売<br>
-              油圧ボールバルブ・チェックバルブ・圧力計他油圧機器の販売
-            </td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class="map-area fade-up">
-        <h2 class="section-title" style="margin-bottom: 24px;">アクセス</h2>
-        <div class="map-wrap">
-          <div class="map-placeholder">Google Maps をここに埋め込む</div>
+  <!-- Company Profile Section -->
+  <section class="bg-surface-container-low py-golden-lg">
+    <div class="max-w-7xl mx-auto px-10">
+      <div class="mb-golden-lg text-center">
+        <h2 class="text-4xl font-bold text-on-surface tracking-tighter mb-6">会社データ</h2>
+        <div class="w-20 h-1.5 bg-primary mx-auto rounded-full"></div>
+      </div>
+      <div class="bg-surface-container-lowest rounded-[3rem] p-16 shadow-[0_20px_60px_rgba(15,103,101,0.04)] max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 divide-y divide-outline-variant/10">
+          <div class="py-10 grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+            <span class="technical-label font-bold text-on-surface-variant text-sm">社名</span>
+            <span class="md:col-span-2 text-xl font-bold text-on-surface">株式会社オリト</span>
+          </div>
+          <div class="py-10 grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+            <span class="technical-label font-bold text-on-surface-variant text-sm">代表者</span>
+            <span class="md:col-span-2 text-xl text-on-surface">折戸　尭</span>
+          </div>
+          <div class="py-10 grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+            <span class="technical-label font-bold text-on-surface-variant text-sm">設立</span>
+            <span class="md:col-span-2 text-xl text-on-surface">yyyy年mm月dd日</span>
+          </div>
+          <div class="py-10 grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+            <span class="technical-label font-bold text-on-surface-variant text-sm">資本金</span>
+            <span class="md:col-span-2 text-xl text-on-surface">万円</span>
+          </div>
         </div>
       </div>
+    </div>
+  </section>
 
+  <!-- Access Section -->
+  <section class="py-golden-lg bg-surface">
+    <div class="max-w-7xl mx-auto px-10">
+      <div class="mb-golden-lg text-center">
+        <h2 class="text-4xl font-bold text-on-surface tracking-tighter mb-6">アクセス</h2>
+        <div class="w-20 h-1.5 bg-primary mx-auto rounded-full"></div>
+      </div>
+      <div class="bg-surface-container-lowest rounded-[3rem] overflow-hidden shadow-2xl border border-outline-variant/5 max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2">
+          <div class="p-16 flex flex-col justify-center">
+            <div class="flex items-center gap-6 mb-8">
+              <div class="bg-primary/10 p-4 rounded-2xl">
+                <span class="material-symbols-outlined text-primary scale-125">location_on</span>
+              </div>
+              <h3 class="text-3xl font-bold">オリト 本社</h3>
+            </div>
+            <p class="text-on-surface-variant text-lg mb-10 leading-loose">
+              〒123-4567 東京都千代田区大手町 1-2-3<br/>
+              オリトビル 4F
+            </p>
+            <a class="inline-flex items-center gap-2 rounded-xl px-10 py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary font-black tracking-widest shadow-lg shadow-primary/20 hover:opacity-90 transition-all" href="https://maps.google.com" target="_blank">
+              <span class="material-symbols-outlined">map</span>
+              Google マップで開く
+            </a>
+          </div>
+          <div class="h-[500px] bg-surface-container-low relative lg:h-auto">
+            <div class="absolute inset-0 flex flex-col items-center justify-center text-slate-300 font-bold uppercase tracking-[0.2em]">
+              <span class="material-symbols-outlined text-5xl mb-4">map</span>
+              Map Area
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
 </main>
 
-<footer class="footer">
-  <div class="container footer-inner">
-    <p class="footer-name">株式会社オリト</p>
-    <p class="footer-address">〒000-0000 住所をここに入れる</p>
-    <p class="footer-tel">TEL: 000-0000-0000</p>
-  </div>
-  <div class="footer-copy">
-    <p>Copyright &copy; 株式会社オリト All Rights Reserved.</p>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-slate-950 py-golden-md border-t border-slate-100 dark:border-slate-900">
+  <div class="max-w-7xl mx-auto px-10">
+    <div class="flex flex-col items-center">
+      <div class="text-3xl font-extrabold tracking-tighter text-[#428D8B] mb-12">ORITO</div>
+      <nav class="w-full">
+        <ul class="flex flex-wrap justify-center gap-12 text-center max-w-4xl mx-auto">
+          <li><a class="text-slate-500 dark:text-slate-400 hover:text-[#428D8B] transition-colors text-base font-bold" href="index.html">トップ</a></li>
+          <li><a class="text-slate-500 dark:text-slate-400 hover:text-[#428D8B] transition-colors text-base font-bold" href="service.html">サービス</a></li>
+          <li><a class="text-[#428D8B] text-base font-bold" href="company.html">会社概要</a></li>
+          <li><a class="text-slate-500 dark:text-slate-400 hover:text-[#428D8B] transition-colors text-base font-bold" href="contact.html">お問い合わせ</a></li>
+        </ul>
+      </nav>
+      <div class="mt-16 text-slate-400 text-xs tracking-[0.3em] font-medium">
+        <p>© 株式会社オリト ALL RIGHTS RESERVED.</p>
+      </div>
+    </div>
   </div>
 </footer>
 
-<script src="js/main.js"></script>
 </body>
 </html>
