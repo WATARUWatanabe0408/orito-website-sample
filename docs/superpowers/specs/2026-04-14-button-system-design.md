@@ -21,7 +21,7 @@
 
 - **グラデーション:** `bg-gradient-to-br from-primary to-primary-container`（単色ではなくグラデーションを採用）
 - **font-weight:** `font-black`（900）に統一
-- **ホバー:** `hover:opacity-90 transition-all` に統一（scale・shadow 変化は廃止）
+- **ホバー:** Primary 系は `hover:opacity-90 transition-all` に統一（scale・shadow 変化は廃止）。Secondary のみ `hover:bg-white transition-colors` を維持（半透明→白 の色変化が自然なため）
 - **サイズ構成:** 2サイズ制（デフォルト + ラージ）
 
 ---
@@ -73,7 +73,7 @@
 | ページ / ボタン | バリアント | 変更点 |
 |---|---|---|
 | index.html — ヒーロー「選ばれる理由」 | Default Primary | `shadow-[0_20px_40px...]` → `shadow-lg shadow-primary/20` |
-| index.html — ヒーロー「サービス一覧」 | Default Secondary | 変更なし（既に合致） |
+| index.html — ヒーロー「サービス一覧」 | Default Secondary | `inline-flex items-center gap-2` を追加（視覚的変化なし） |
 | index.html — CTA「お問い合わせフォーム」 | Large Primary | `rounded-2xl` → `rounded-xl`、`hover:scale+shadow` → `hover:opacity-90` |
 | service.html — CTA「お問い合わせ」 | Large Inverse | `rounded-full px-12 py-6 text-xl` → `rounded-xl px-12 py-5 text-lg` |
 | company.html — 「Google マップで開く」 | Default Primary | `bg-[#428D8B] py-5` → グラデーション `py-4` |
