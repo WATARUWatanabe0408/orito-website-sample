@@ -1,0 +1,15 @@
+/* ================================================
+   事業紹介ページ固有スタイル
+================================================ */
+
+/* テキストグラデーション（プライマリカラー → プライマリコンテナ） */
+.text-gradient {
+    background: linear-gradient(135deg, #0f6765 0%, #33807e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* 背景グラデーション（カードホバー時のアイコン背景など） */
+.bg-gradient-primary {
+    background: linear-gradient(135deg, #0f6765 0%, #33807e 100%);
+}
