@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html class="light" lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>お問い合わせ - 株式会社オリト</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="css/tailwind-config.js"></script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="stylesheet" href="css/common.css"/>
+<link rel="stylesheet" href="css/contact.css"/>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+
+<!-- TopNavBar -->
+<nav class="docked full-width top-0 sticky z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(15,103,101,0.06)]">
+  <div class="max-w-7xl mx-auto px-8 flex justify-between items-center h-20">
+    <a href="index.html" class="text-2xl font-bold tracking-widest text-[#428D8B]">ORITO</a>
+    <!-- Desktop Nav -->
+    <div class="hidden md:flex items-center space-x-10 font-bold tracking-wider">
+      <a class="text-slate-600 dark:text-slate-400 hover:text-[#428D8B] transition-colors" href="index.html">トップ</a>
+      <a class="text-slate-600 dark:text-slate-400 hover:text-[#428D8B] transition-colors" href="service.html">サービス</a>
+      <a class="text-slate-600 dark:text-slate-400 hover:text-[#428D8B] transition-colors" href="company.html">会社概要</a>
+      <a class="text-[#428D8B] border-b-2 border-[#428D8B] pb-1" href="contact.html">お問い合わせ</a>
+    </div>
+    <!-- Mobile Toggle -->
+    <div class="md:hidden">
+      <span class="material-symbols-outlined text-primary text-3xl">menu</span>
+    </div>
+  </div>
+</nav>
+
+<main class="min-h-screen">
+
+  <!-- Hero Section -->
+  <section class="relative golden-pt pb-20 overflow-hidden">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 -z-10 w-full max-w-4xl h-full bg-gradient-to-b from-primary/5 to-transparent rounded-full blur-3xl opacity-50"></div>
+    <div class="max-w-7xl mx-auto px-8 text-center">
+      <div class="flex flex-col items-center">
+        <span class="technical-label text-primary font-medium uppercase mb-6 block">お気軽にご連絡ください</span>
+        <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight mb-8 leading-[1.2] text-on-surface">
+          お問い合わせ
+        </h1>
+        <p class="text-lg text-on-surface-variant max-w-2xl leading-[1.618] tracking-wider">
+          高圧システムの技術仕様やカスタム油圧ソリューションについてのご相談など、当社のエンジニアリングチームがサポートいたします。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Form Section -->
+  <section class="golden-pb bg-surface-container-low">
+    <div class="max-w-7xl mx-auto px-8 flex justify-center">
+      <div class="golden-form-container w-full bg-surface-container-lowest p-10 md:p-16 rounded-[3rem] shadow-[0_40px_80px_rgba(15,103,101,0.04)] -translate-y-12">
+        <form class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+          <!-- Name -->
+          <div class="space-y-3">
+            <label class="technical-label text-xs font-bold text-on-surface-variant/80 ml-1 uppercase">お名前</label>
+            <input class="w-full h-14 px-6 rounded-xl bg-surface-container-low border-none focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all text-on-surface placeholder:text-on-surface-variant/30 tracking-wider" placeholder="山田 太郎" type="text"/>
+          </div>
+          <!-- Company -->
+          <div class="space-y-3">
+            <label class="technical-label text-xs font-bold text-on-surface-variant/80 ml-1 uppercase">貴社名</label>
+            <input class="w-full h-14 px-6 rounded-xl bg-surface-container-low border-none focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all text-on-surface placeholder:text-on-surface-variant/30 tracking-wider" placeholder="株式会社〇〇" type="text"/>
+          </div>
+          <!-- Email -->
+          <div class="space-y-3">
+            <label class="technical-label text-xs font-bold text-on-surface-variant/80 ml-1 uppercase">メールアドレス</label>
+            <input class="w-full h-14 px-6 rounded-xl bg-surface-container-low border-none focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all text-on-surface placeholder:text-on-surface-variant/30 tracking-wider" placeholder="contact@company.com" type="email"/>
+          </div>
+          <!-- Phone -->
+          <div class="space-y-3">
+            <label class="technical-label text-xs font-bold text-on-surface-variant/80 ml-1 uppercase">電話番号</label>
+            <input class="w-full h-14 px-6 rounded-xl bg-surface-container-low border-none focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all text-on-surface placeholder:text-on-surface-variant/30 tracking-wider" placeholder="03-0000-0000" type="tel"/>
+          </div>
+          <!-- Subject -->
+          <div class="md:col-span-2 space-y-3">
+            <label class="technical-label text-xs font-bold text-on-surface-variant/80 ml-1 uppercase">お問い合わせ件名</label>
+            <select class="w-full h-14 px-6 rounded-xl bg-surface-container-low border-none focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all text-on-surface appearance-none tracking-wider cursor-pointer">
+              <option>技術的なお問い合わせ</option>
+              <option>製品のお見積もり</option>
+              <option>メンテナンス・サポート</option>
+              <option>パートナーシップのご提案</option>
+              <option>その他</option>
+            </select>
+          </div>
+          <!-- Message -->
+          <div class="md:col-span-2 space-y-3">
+            <label class="technical-label text-xs font-bold text-on-surface-variant/80 ml-1 uppercase">お問い合わせ内容</label>
+            <textarea class="w-full p-6 rounded-xl bg-surface-container-low border-none focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all text-on-surface placeholder:text-on-surface-variant/30 resize-none tracking-wider leading-relaxed" placeholder="ご要望の詳細をご記入ください..." rows="6"></textarea>
+          </div>
+          <!-- Policy Checkbox -->
+          <div class="md:col-span-2 py-6">
+            <label class="flex items-start gap-4 cursor-pointer group">
+              <div class="relative flex items-center mt-1">
+                <input class="peer h-6 w-6 rounded-lg bg-surface-container-low border-none checked:bg-primary transition-colors cursor-pointer ring-0 focus:ring-0" type="checkbox"/>
+                <span class="material-symbols-outlined absolute inset-0 text-white text-base opacity-0 peer-checked:opacity-100 flex items-center justify-center pointer-events-none">check</span>
+              </div>
+              <span class="text-sm text-on-surface-variant leading-[1.618] select-none tracking-wider">
+                個人情報の取り扱いに関するプライバシーポリシーに同意します。
+              </span>
+            </label>
+          </div>
+          <!-- Submit -->
+          <div class="md:col-span-2 flex justify-center pt-4">
+            <button class="w-full md:w-[61.8%] inline-flex items-center justify-center gap-2 rounded-xl px-12 py-5 text-lg bg-gradient-to-br from-primary to-primary-container text-on-primary font-black tracking-widest shadow-lg shadow-primary/20 hover:opacity-90 transition-all" type="submit">
+              送信する
+              <span class="material-symbols-outlined">send</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-surface py-24 border-t border-slate-100 dark:border-slate-800">
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="flex flex-col items-center">
+      <div class="text-2xl font-bold tracking-widest text-[#428D8B] mb-16">ORITO</div>
+      <nav class="w-full">
+        <ul class="flex flex-wrap justify-center gap-x-12 gap-y-6 text-center max-w-4xl mx-auto tracking-wider">
+          <li><a class="text-slate-500 dark:text-slate-400 hover:text-[#428D8B] transition-colors text-base font-bold" href="index.html">トップ</a></li>
+          <li><a class="text-slate-500 dark:text-slate-400 hover:text-[#428D8B] transition-colors text-base font-bold" href="service.html">サービス</a></li>
+          <li><a class="text-slate-500 dark:text-slate-400 hover:text-[#428D8B] transition-colors text-base font-bold" href="company.html">会社概要</a></li>
+          <li><a class="text-[#428D8B] text-base font-bold" href="contact.html">お問い合わせ</a></li>
+        </ul>
+      </nav>
+      <div class="mt-20 text-slate-400 text-[10px] tracking-[0.3em] uppercase text-center">
+        <p>© 株式会社オリト All Rights Reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
