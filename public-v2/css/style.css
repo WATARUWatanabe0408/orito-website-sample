@@ -1546,6 +1546,10 @@ body.menu-open { overflow: hidden; }
 .reveal--delay-2 { transition-delay: 200ms; }
 .reveal--delay-3 { transition-delay: 300ms; }
 
+/* hero/page-header はJSのsetTimeoutのみで制御するためCSS遅延を無効化 */
+.hero .reveal,
+.page-header .reveal { transition-delay: 0ms !important; }
+
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
   .strip__track { animation: none; }

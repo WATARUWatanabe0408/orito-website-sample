@@ -1,9 +1,9 @@
 // Hero / page-header: fire with exact delays on load (bypass observer)
-const DELAY_MAP = { 'reveal--delay-1': 100, 'reveal--delay-2': 200, 'reveal--delay-3': 300 };
+const HERO_DELAY_MAP = { 'reveal--delay-1': 180, 'reveal--delay-2': 280, 'reveal--delay-3': 380 };
 
 document.querySelectorAll('.hero .reveal, .page-header .reveal').forEach((el) => {
   let delay = 80;
-  Object.entries(DELAY_MAP).forEach(([cls, ms]) => { if (el.classList.contains(cls)) delay = ms; });
+  Object.entries(HERO_DELAY_MAP).forEach(([cls, ms]) => { if (el.classList.contains(cls)) delay = ms; });
   setTimeout(() => el.classList.add('is-in'), delay);
 });
 
