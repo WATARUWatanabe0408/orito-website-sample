@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Count-up Samples</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #0a0a0a;
+  color: #fff;
+  font-family: 'Noto Sans JP', sans-serif;
+  padding: 60px 40px;
+}
+
+h2 {
+  font-family: 'Anton', sans-serif;
+  font-size: 13px;
+  letter-spacing: .3em;
+  color: #555;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+}
+
+.section { margin-bottom: 100px; }
+
+.label-tag {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: .25em;
+  color: #f60;
+  background: rgba(255,102,0,.12);
+  border: 1px solid rgba(255,102,0,.3);
+  padding: 4px 12px;
+  border-radius: 2px;
+  margin-bottom: 32px;
+}
+
+/* ─────────────────────────────────────────
+   SAMPLE A: ストレートカウントアップ（イーズアウト）
+   既存UIに最も馴染む。シンプルで実用的。
+───────────────────────────────────────── */
+.sample-a {
+  background: #111;
+  border: 1px solid #222;
+  padding: 56px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px 64px;
+}
+
+.stat-a {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .5s, transform .5s;
+}
+.stat-a.visible { opacity: 1; transform: none; }
+
+.stat-a__num {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(56px, 8vw, 88px);
+  line-height: 1;
+  color: #fff;
+}
+.stat-a__num .unit {
+  font-size: .4em;
+  color: #f60;
+  letter-spacing: .05em;
+}
+.stat-a__label {
+  font-size: 11px;
+  letter-spacing: .22em;
+  color: #555;
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+
+/* ─────────────────────────────────────────
+   SAMPLE B: スロット風（桁が上からドロップ）
+   各桁が個別に落ちてくる演出。インパクト強め。
+───────────────────────────────────────── */
+.sample-b {
+  background: #111;
+  border: 1px solid #222;
+  padding: 56px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px 64px;
+}
+
+.stat-b { }
+
+.stat-b__num {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(56px, 8vw, 88px);
+  line-height: 1;
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+  overflow: hidden;
+}
+
+.slot-char {
+  display: inline-flex;
+  flex-direction: column;
+  height: 1em;
+  overflow: hidden;
+}
+
+.slot-char__inner {
+  display: flex;
+  flex-direction: column;
+  transform: translateY(-100%);
+  transition: transform .6s cubic-bezier(.16,1,.3,1);
+}
+.slot-char__inner.dropped { transform: translateY(0); }
+
+.slot-char__digit { height: 1em; line-height: 1; }
+
+.stat-b__unit {
+  font-family: 'Anton', sans-serif;
+  font-size: .4em;
+  color: #f60;
+}
+.stat-b__label {
+  font-size: 11px;
+  letter-spacing: .22em;
+  color: #555;
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+
+/* ─────────────────────────────────────────
+   SAMPLE C: グロー + スクランブル（ランダム文字が解読される演出）
+   ハッカーっぽい。インダストリアルな雰囲気に合う。
+───────────────────────────────────────── */
+.sample-c {
+  background: #111;
+  border: 1px solid #1a1a1a;
+  padding: 56px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px 64px;
+}
+
+.stat-c__num {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(56px, 8vw, 88px);
+  line-height: 1;
+  color: #fff;
+  text-shadow: 0 0 40px rgba(255,102,0,.5);
+}
+.stat-c__num .unit {
+  font-size: .4em;
+  color: #f60;
+}
+.stat-c__label {
+  font-size: 11px;
+  letter-spacing: .22em;
+  color: #555;
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+
+/* trigger button */
+.controls {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.replay-btn {
+  font-family: 'Anton', sans-serif;
+  font-size: 13px;
+  letter-spacing: .2em;
+  background: none;
+  border: 1px solid #333;
+  color: #888;
+  padding: 10px 28px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: border-color .2s, color .2s;
+}
+.replay-btn:hover { border-color: #f60; color: #f60; }
+</style>
+</head>
+<body>
+
+<div class="section">
+  <div class="label-tag">SAMPLE A</div>
+  <h2>ストレートカウントアップ（イーズアウト） — シンプル・安定</h2>
+  <div class="controls"><button class="replay-btn" onclick="runA()">▶ REPLAY</button></div>
+  <div class="sample-a" id="sampleA">
+    <div class="stat-a"><div class="stat-a__num"><span class="count-a" data-target="47">0</span><span class="unit">YRS</span></div><div class="stat-a__label">SINCE 1978</div></div>
+    <div class="stat-a"><div class="stat-a__num"><span class="count-a" data-target="12000">0</span><span class="unit">+</span></div><div class="stat-a__label">PARTS IN NETWORK</div></div>
+    <div class="stat-a"><div class="stat-a__num"><span class="count-a" data-target="24">0</span><span class="unit">H</span></div><div class="stat-a__label">URGENT RESPONSE</div></div>
+    <div class="stat-a"><div class="stat-a__num"><span class="count-a" data-target="600">0</span><span class="unit">+</span></div><div class="stat-a__label">B2B CLIENTS</div></div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="label-tag">SAMPLE B</div>
+  <h2>スロット風ドロップ — 各桁が上から落ちてくる</h2>
+  <div class="controls"><button class="replay-btn" onclick="runB()">▶ REPLAY</button></div>
+  <div class="sample-b" id="sampleB">
+    <div class="stat-b">
+      <div class="stat-b__num" id="slotA"></div>
+      <div class="stat-b__unit" id="slotAu">YRS</div>
+      <div class="stat-b__label">SINCE 1978</div>
+    </div>
+    <div class="stat-b">
+      <div class="stat-b__num" id="slotB"></div>
+      <div class="stat-b__unit" id="slotBu">+</div>
+      <div class="stat-b__label">PARTS IN NETWORK</div>
+    </div>
+    <div class="stat-b">
+      <div class="stat-b__num" id="slotC"></div>
+      <div class="stat-b__unit" id="slotCu">H</div>
+      <div class="stat-b__label">URGENT RESPONSE</div>
+    </div>
+    <div class="stat-b">
+      <div class="stat-b__num" id="slotD"></div>
+      <div class="stat-b__unit" id="slotDu">+</div>
+      <div class="stat-b__label">B2B CLIENTS</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="label-tag">SAMPLE C</div>
+  <h2>スクランブル解読（グロー付き） — ランダム文字が正解に収束する</h2>
+  <div class="controls"><button class="replay-btn" onclick="runC()">▶ REPLAY</button></div>
+  <div class="sample-c" id="sampleC">
+    <div class="stat-c"><div class="stat-c__num" id="scrA">--<span class="unit">YRS</span></div><div class="stat-c__label">SINCE 1978</div></div>
+    <div class="stat-c"><div class="stat-c__num" id="scrB">--<span class="unit">+</span></div><div class="stat-c__label">PARTS IN NETWORK</div></div>
+    <div class="stat-c"><div class="stat-c__num" id="scrC">--<span class="unit">H</span></div><div class="stat-c__label">URGENT RESPONSE</div></div>
+    <div class="stat-c"><div class="stat-c__num" id="scrD">--<span class="unit">+</span></div><div class="stat-c__label">B2B CLIENTS</div></div>
+  </div>
+</div>
+
+<script>
+/* ── SAMPLE A: easeOut count-up ── */
+function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+
+function countUp(el, target, duration, delay) {
+  setTimeout(() => {
+    const start = performance.now();
+    const isLarge = target >= 1000;
+    function tick(now) {
+      const t = Math.min((now - start) / duration, 1);
+      const val = Math.round(easeOut(t) * target);
+      el.textContent = isLarge ? val.toLocaleString() : val;
+      if (t < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }, delay);
+}
+
+function runA() {
+  document.querySelectorAll('#sampleA .stat-a').forEach((s, i) => {
+    s.classList.remove('visible');
+    setTimeout(() => s.classList.add('visible'), i * 120);
+  });
+  document.querySelectorAll('#sampleA .count-a').forEach((el, i) => {
+    el.textContent = '0';
+    countUp(el, +el.dataset.target, 1200, i * 200 + 100);
+  });
+}
+
+/* ── SAMPLE B: slot drop ── */
+function buildSlot(containerId, text, delay) {
+  const el = document.getElementById(containerId);
+  el.innerHTML = '';
+  [...text].forEach((ch, i) => {
+    if (ch === ',') {
+      const comma = document.createElement('span');
+      comma.textContent = ',';
+      comma.style.cssText = 'font-family:Anton,sans-serif;font-size:inherit;opacity:.5;margin:0 1px;';
+      el.appendChild(comma);
+      return;
+    }
+    const slot = document.createElement('span');
+    slot.className = 'slot-char';
+    const inner = document.createElement('span');
+    inner.className = 'slot-char__inner';
+    // ghost digit above
+    const ghost = document.createElement('span');
+    ghost.className = 'slot-char__digit';
+    ghost.textContent = String((+ch + 5) % 10);
+    const real = document.createElement('span');
+    real.className = 'slot-char__digit';
+    real.textContent = ch;
+    inner.appendChild(ghost);
+    inner.appendChild(real);
+    slot.appendChild(inner);
+    el.appendChild(slot);
+    setTimeout(() => inner.classList.add('dropped'), delay + i * 80);
+  });
+}
+
+function runB() {
+  buildSlot('slotA', '47', 300);
+  buildSlot('slotB', '12,000', 500);
+  buildSlot('slotC', '24', 700);
+  buildSlot('slotD', '600', 900);
+}
+
+/* ── SAMPLE C: scramble ── */
+const chars = '0123456789';
+function scramble(elId, finalText, unitHtml, duration, delay) {
+  const el = document.getElementById(elId);
+  setTimeout(() => {
+    const start = performance.now();
+    function tick(now) {
+      const t = Math.min((now - start) / duration, 1);
+      let result = '';
+      for (let i = 0; i < finalText.length; i++) {
+        if (t > i / finalText.length + 0.3) {
+          result += finalText[i];
+        } else {
+          result += chars[Math.floor(Math.random() * chars.length)];
+        }
+      }
+      el.innerHTML = result + unitHtml;
+      if (t < 1) requestAnimationFrame(tick);
+      else el.innerHTML = finalText + unitHtml;
+    }
+    requestAnimationFrame(tick);
+  }, delay);
+}
+
+function runC() {
+  const u = s => `<span class="unit">${s}</span>`;
+  scramble('scrA', '47',     u('YRS'), 1000, 0);
+  scramble('scrB', '12,000', u('+'),   1400, 200);
+  scramble('scrC', '24',     u('H'),   800,  400);
+  scramble('scrD', '600',    u('+'),   1200, 600);
+}
+
+/* auto-run on load */
+runA(); runB(); runC();
+</script>
+</body>
+</html>
