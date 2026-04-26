@@ -709,6 +709,7 @@ body.menu-open { overflow: hidden; }
   aspect-ratio: 4 / 3;
   position: relative;
   overflow: hidden;
+  background: var(--c-surface);
 }
 .service-card__img {
   width: 100%;
@@ -1010,6 +1011,7 @@ body.menu-open { overflow: hidden; }
   max-height: 360px;
   overflow: hidden;
   border-radius: 4px;
+  background: var(--c-surface);
 }
 .page-header__img {
   width: 100%;
@@ -1047,6 +1049,7 @@ body.menu-open { overflow: hidden; }
   aspect-ratio: 1 / 1;
   position: relative;
   overflow: hidden;
+  background: var(--c-white);
 }
 .svc-item__img {
   width: 100%;
