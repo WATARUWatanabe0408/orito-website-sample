@@ -3,380 +3,183 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>黄金比プレビュー — 株式会社オリト</title>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<title>黄金比プレビュー</title>
 <style>
-/* φ = 1.618  スケール: base 10px × φ^n
-   φ¹=16  φ²=26  φ³=42  φ⁴=68  φ⁵=110  φ⁶=178 */
-:root {
-  --sp1: 16px;
-  --sp2: 26px;
-  --sp3: 42px;
-  --sp4: 68px;
-  --sp5: 110px;
-  --sp6: 178px;
+/* φ = 1.618  |  base 10px × φ^n
+   16 / 26 / 42 / 68 / 110 / 178 */
 
-  --black:   #0e0e0e;
-  --white:   #ffffff;
-  --surface: #f8f8f6;
-  --text:    #1a1a1a;
-  --muted:   #6b6b6b;
-  --border:  #e5e5e2;
-  --hover:   #f0f0ed;
-  --accent:  #e85d04;
-
-  --display: 'Anton', sans-serif;
-  --body:    'Noto Sans JP', sans-serif;
-  --mono:    'JetBrains Mono', monospace;
-}
-
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body { font-family: var(--body); color: var(--text); background: var(--surface); line-height: 1.7; }
-img { display: block; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; }
+body { font-family: -apple-system, 'Helvetica Neue', sans-serif; background: #f8f8f6; color: #1a1a1a; line-height: 1.7; }
 a { text-decoration: none; color: inherit; }
 
-.container { max-width: 1200px; margin: 0 auto; padding: 0 var(--sp3); }
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 42px; }
 
-/* ── BADGE ── */
-.badge {
-  background: var(--black);
-  color: rgba(255,255,255,.6);
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: .15em;
-  text-align: center;
-  padding: 10px;
-}
-.badge strong { color: var(--accent); }
+/* badge */
+.badge { background: #0e0e0e; color: #e85d04; font-family: monospace; font-size: 12px; letter-spacing: .12em; text-align: center; padding: 10px; }
 
-/* ── NAV ── */
-.nav {
-  background: rgba(255,255,255,.92);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-  position: sticky; top: 0; z-index: 50;
-}
-.nav-inner {
-  max-width: 1200px; margin: 0 auto;
-  padding: 0 var(--sp3);
-  height: 68px;
-  display: flex; justify-content: space-between; align-items: center;
-}
-.logo { font-family: var(--display); font-size: 22px; letter-spacing: .08em; color: var(--black); }
-.nav-links { display: flex; gap: var(--sp3); list-style: none; }
-.nav-links a { font-size: 13px; font-weight: 700; letter-spacing: .08em; color: var(--muted); }
-.nav-links a:hover { color: var(--black); }
-.nav-cta { display: flex; gap: var(--sp1); }
+/* nav */
+.nav { background: #fff; border-bottom: 1px solid #e5e5e2; position: sticky; top: 0; z-index: 10; }
+.nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 42px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+.logo { font-size: 20px; font-weight: 900; letter-spacing: .08em; }
+.nav-links { display: flex; gap: 32px; list-style: none; font-size: 13px; font-weight: 700; color: #888; }
 
-/* ── BUTTONS ── */
-.btn {
-  font-family: var(--body);
-  font-size: 14px; font-weight: 700;
-  letter-spacing: .06em;
-  padding: 14px 28px;
-  border-radius: 3px;
-  display: inline-flex; align-items: center; gap: 8px;
-  cursor: pointer; transition: opacity 180ms, background 180ms;
-}
-.btn-accent { background: var(--accent); color: #fff; }
-.btn-accent:hover { opacity: .85; }
-.btn-ghost { background: transparent; border: 1.5px solid var(--border); color: var(--text); }
-.btn-ghost:hover { background: var(--hover); }
-.btn-white { background: var(--white); color: var(--accent); font-weight: 700; }
-.btn-lg { padding: 18px 36px; font-size: 15px; }
-
-/* ── EYEBROW ── */
-.eyebrow {
-  font-family: var(--mono);
-  font-size: 11px; letter-spacing: .2em;
-  color: var(--muted); text-transform: uppercase;
-  display: flex; align-items: center; gap: 10px;
-}
-.eyebrow::before { content: ""; width: 20px; height: 1px; background: currentColor; flex-shrink: 0; }
-
-/* ── HERO ── */
-.hero {
-  background: var(--white);
-  padding: var(--sp4) 0 var(--sp5);
-  border-bottom: 1px solid var(--border);
-}
-.hero-inner {
-  max-width: 1200px; margin: 0 auto; padding: 0 var(--sp3);
+/* hero */
+.hero { background: #fff; padding: 68px 0 110px; border-bottom: 1px solid #e5e5e2; }
+.hero-grid {
+  max-width: 1200px; margin: 0 auto; padding: 0 42px;
   display: grid;
-  grid-template-columns: 1.618fr 1fr;  /* ★ φ : 1 */
-  gap: var(--sp3);
+  grid-template-columns: 1.618fr 1fr;   /* ★ φ:1 */
+  gap: 42px;
   align-items: center;
-  min-height: 60vh;
 }
-.hero-text { display: flex; flex-direction: column; gap: var(--sp2); }
-.hero-title {
-  font-family: var(--display);
-  font-size: clamp(72px, 10vw, 154px);
-  line-height: .92;
-  text-transform: uppercase;
-  color: var(--black);
-}
-.hero-title .accent { color: var(--accent); }
-.hero-sub {
-  font-family: var(--body);
-  font-size: clamp(20px, 2.6vw, 34px);
-  font-weight: 700;
-  color: var(--black);
-}
-.hero-lead { font-size: 15px; color: var(--muted); line-height: 1.85; max-width: 500px; }
-.hero-actions { display: flex; gap: var(--sp1); flex-wrap: wrap; }
+.hero-text { display: flex; flex-direction: column; gap: 26px; }
+.eyebrow { font-family: monospace; font-size: 11px; letter-spacing: .2em; color: #888; text-transform: uppercase; }
+.hero-title { font-size: clamp(72px, 10vw, 140px); font-weight: 900; line-height: .9; letter-spacing: -.02em; text-transform: uppercase; }
+.hero-title .accent { color: #e85d04; }
+.hero-sub { font-size: clamp(20px, 2.4vw, 32px); font-weight: 700; }
+.hero-lead { font-size: 15px; color: #666; line-height: 1.85; max-width: 480px; }
+.hero-actions { display: flex; gap: 16px; }
+.btn-a { background: #e85d04; color: #fff; font-size: 15px; font-weight: 700; padding: 18px 36px; border-radius: 3px; }
+.btn-b { background: transparent; border: 1.5px solid #ccc; font-size: 15px; font-weight: 700; padding: 18px 36px; border-radius: 3px; }
 .hero-visual {
-  aspect-ratio: 1 / 1.618;  /* ★ 1 : φ */
-  background: var(--hover);
+  aspect-ratio: 1 / 1.618;   /* ★ 1:φ */
+  background: linear-gradient(160deg, #e5e5e2 0%, #d0d0cc 100%);
   border-radius: 4px;
-  overflow: hidden;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+  color: #999; font-family: monospace; font-size: 11px; letter-spacing: .12em; text-align: center;
 }
-.hero-visual img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
 
-/* ── STRIP ── */
-.strip { background: var(--black); overflow: hidden; padding: 14px 0; }
-.strip-track {
-  display: flex; gap: 48px;
-  width: max-content;
-  animation: marquee 24s linear infinite;
-}
-.strip-item {
-  font-family: var(--mono);
-  font-size: 11px; letter-spacing: .2em;
-  color: rgba(255,255,255,.35);
-  white-space: nowrap;
-}
-@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+/* strip */
+.strip { background: #0e0e0e; padding: 14px 0; overflow: hidden; }
+.strip-track { display: flex; gap: 48px; width: max-content; animation: slide 20s linear infinite; }
+.strip-item { font-family: monospace; font-size: 11px; letter-spacing: .18em; color: rgba(255,255,255,.3); white-space: nowrap; }
+@keyframes slide { to { transform: translateX(-50%); } }
 
-/* ── PILLARS ── */
-.pillars { padding: var(--sp5) 0; background: var(--surface); }
-.pillars-head {
-  display: flex; justify-content: space-between; align-items: flex-end;
-  gap: var(--sp3);
-  margin-bottom: var(--sp4);
-}
-.pillars-title {
-  font-family: var(--display);
-  font-size: clamp(40px, 5vw, 72px);
-  line-height: .9; text-transform: uppercase;
-  margin-top: var(--sp1);
-}
-.pillars-title .accent { color: var(--accent); }
-.pillars-intro { font-size: 14px; color: var(--muted); max-width: 300px; text-align: right; line-height: 1.85; }
-.pillars-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: var(--border);
-  border: 1px solid var(--border);
-}
-.pillar {
-  background: var(--white);
-  padding: var(--sp3) var(--sp3) var(--sp4);
-  display: flex; flex-direction: column; gap: var(--sp1);
-}
-.pillar-num { font-family: var(--mono); font-size: 10px; letter-spacing: .18em; color: var(--muted); }
-.pillar-en {
-  font-family: var(--display);
-  font-size: clamp(28px, 3vw, 44px);
-  color: var(--border);
-  line-height: 1;
-}
-.pillar-title { font-size: 17px; font-weight: 700; line-height: 1.5; }
-.pillar-body { font-size: 13px; color: var(--muted); line-height: 1.85; }
+/* section base */
+.section { padding: 110px 0; }   /* ★ φ⁵ = 110px */
+.section-alt { background: #fff; }
 
-/* ── STATS ── */
-.stats { background: var(--black); padding: var(--sp5) 0; }
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  border: 1px solid rgba(255,255,255,.06);
-}
-.stat {
-  padding: var(--sp3);
-  border-left: 1px solid rgba(255,255,255,.06);
-}
+/* pillars */
+.pillars-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 42px; margin-bottom: 68px; }
+.sec-title { font-size: clamp(40px, 5vw, 68px); font-weight: 900; line-height: .9; text-transform: uppercase; margin-top: 12px; }
+.sec-title .accent { color: #e85d04; }
+.intro-txt { font-size: 14px; color: #666; max-width: 280px; text-align: right; line-height: 1.85; }
+.pillars-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: #e5e5e2; border: 1px solid #e5e5e2; }
+.pillar { background: #fff; padding: 42px 42px 68px; display: flex; flex-direction: column; gap: 12px; }
+.pillar-num { font-family: monospace; font-size: 10px; letter-spacing: .18em; color: #aaa; }
+.pillar-en { font-size: clamp(28px,3vw,42px); font-weight: 900; color: #e5e5e2; line-height: 1; }
+.pillar-ttl { font-size: 17px; font-weight: 700; line-height: 1.5; }
+.pillar-body { font-size: 13px; color: #666; line-height: 1.85; }
+
+/* stats */
+.stats { background: #0e0e0e; padding: 110px 0; }
+.stats-grid { display: grid; grid-template-columns: repeat(4,1fr); border: 1px solid rgba(255,255,255,.06); }
+.stat { padding: 42px; border-left: 1px solid rgba(255,255,255,.06); }
 .stat:first-child { border-left: none; }
-.stat-num {
-  font-family: var(--display);
-  font-size: clamp(48px, 6vw, 88px);
-  line-height: 1; color: var(--white);
-}
-.stat-unit { font-size: .38em; color: var(--accent); }
-.stat-label {
-  font-family: var(--mono);
-  font-size: 10px; letter-spacing: .2em;
-  color: rgba(255,255,255,.3);
-  margin-top: var(--sp1);
-}
+.stat-num { font-size: clamp(48px,6vw,84px); font-weight: 900; line-height: 1; color: #fff; }
+.stat-unit { font-size: .38em; color: #e85d04; }
+.stat-lbl { font-family: monospace; font-size: 10px; letter-spacing: .18em; color: rgba(255,255,255,.3); margin-top: 16px; }
 
-/* ── SERVICES ── */
-.services { background: var(--white); padding: var(--sp5) 0; }
-.services-head {
-  display: flex; justify-content: space-between; align-items: flex-end;
-  gap: var(--sp3);
-  margin-bottom: var(--sp4);
-}
-.services-title {
-  font-family: var(--display);
-  font-size: clamp(40px, 5vw, 72px);
-  line-height: .9; text-transform: uppercase;
-  margin-top: var(--sp1);
-}
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--sp2);
-}
-.svc-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  overflow: hidden;
-  display: block;
-  transition: transform 220ms, box-shadow 220ms;
-}
-.svc-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,.08); }
-.svc-visual { aspect-ratio: 16/9; background: var(--hover); overflow: hidden; }
-.svc-visual img { width: 100%; height: 100%; object-fit: cover; }
-.svc-body { padding: var(--sp2); display: flex; flex-direction: column; gap: var(--sp1); }
-.svc-index {
-  font-family: var(--mono); font-size: 10px; letter-spacing: .15em; color: var(--muted);
-  display: flex; justify-content: space-between;
-}
-.svc-title { font-size: 16px; font-weight: 700; line-height: 1.5; }
-.svc-desc { font-size: 13px; color: var(--muted); line-height: 1.8; }
+/* services */
+.svc-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 42px; margin-bottom: 68px; }
+.svc-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 26px; }  /* ★ φ²=26px */
+.svc-card { background: #f8f8f6; border: 1px solid #e5e5e2; overflow: hidden; border-radius: 2px; }
+.svc-img { aspect-ratio: 16/9; background: linear-gradient(135deg,#e0dedd,#ccc); display: flex; align-items: center; justify-content: center; font-family: monospace; font-size: 10px; letter-spacing: .15em; color: #aaa; }
+.svc-body { padding: 26px; display: flex; flex-direction: column; gap: 10px; }
+.svc-idx { font-family: monospace; font-size: 10px; letter-spacing: .15em; color: #aaa; display: flex; justify-content: space-between; }
+.svc-ttl { font-size: 16px; font-weight: 700; line-height: 1.5; }
+.svc-desc { font-size: 13px; color: #666; line-height: 1.8; }
 
-/* ── CTA ── */
-.cta { background: var(--accent); padding: var(--sp4) 0; }
-.cta-inner {
-  display: flex; justify-content: space-between; align-items: center;
-  gap: var(--sp3);
-}
-.cta-title {
-  font-family: var(--display);
-  font-size: clamp(36px, 4vw, 64px);
-  line-height: .9; text-transform: uppercase; color: #fff;
-}
-.cta-sub { font-size: 14px; color: rgba(255,255,255,.8); margin-top: var(--sp1); }
+/* cta */
+.cta { background: #e85d04; padding: 68px 0; }
+.cta-inner { display: flex; justify-content: space-between; align-items: center; gap: 42px; }
+.cta-ttl { font-size: clamp(36px,4vw,60px); font-weight: 900; line-height: .9; text-transform: uppercase; color: #fff; }
+.cta-sub { font-size: 14px; color: rgba(255,255,255,.8); margin-top: 12px; }
+.btn-cta { background: #fff; color: #e85d04; font-size: 15px; font-weight: 700; padding: 18px 36px; border-radius: 3px; white-space: nowrap; }
 
-/* ── FOOTER ── */
-.footer {
-  background: var(--black);
-  padding: var(--sp4) 0 var(--sp3);
-  font-family: var(--mono);
-  font-size: 11px; letter-spacing: .12em;
-  color: rgba(255,255,255,.3);
-  text-align: center;
-}
+/* footer */
+footer { background: #0e0e0e; padding: 42px 0 26px; text-align: center; font-family: monospace; font-size: 11px; letter-spacing: .12em; color: rgba(255,255,255,.25); }
 
-/* ── φ INFO PANEL ── */
-.phi-panel {
-  background: var(--black);
-  color: rgba(255,255,255,.7);
-  padding: var(--sp3) 0;
-  font-family: var(--mono);
-  font-size: 12px;
-}
-.phi-panel h3 {
-  font-size: 11px; letter-spacing: .2em;
-  color: var(--accent); text-transform: uppercase;
-  margin-bottom: var(--sp2);
-}
-.phi-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: var(--sp2);
-}
-.phi-item { border-left: 2px solid rgba(232,93,4,.4); padding-left: 14px; }
-.phi-item dt { color: var(--accent); font-size: 11px; margin-bottom: 4px; }
-.phi-item dd { color: rgba(255,255,255,.5); font-size: 11px; line-height: 1.6; }
+/* info table */
+.phi-info { background: #111; padding: 42px 0; }
+.phi-info h3 { font-family: monospace; font-size: 11px; letter-spacing: .18em; color: #e85d04; text-transform: uppercase; margin-bottom: 26px; }
+.phi-table { width: 100%; border-collapse: collapse; font-family: monospace; font-size: 12px; }
+.phi-table th, .phi-table td { text-align: left; padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,.06); }
+.phi-table th { color: rgba(255,255,255,.3); font-weight: normal; width: 38%; }
+.phi-table td { color: rgba(255,255,255,.65); }
+.phi-table .new { color: #e85d04; }
+.phi-table .old { color: rgba(255,255,255,.25); text-decoration: line-through; }
 </style>
 </head>
 <body>
 
-<div class="badge">⬡ <strong>黄金比プレビュー</strong> — このページはサンプルです。φ = 1.618</div>
+<div class="badge">⬡ 黄金比プレビュー — φ = 1.618033…</div>
 
-<!-- NAV -->
 <header class="nav">
   <div class="nav-inner">
-    <span class="logo">ORITO</span>
+    <div class="logo">ORITO</div>
     <ul class="nav-links">
-      <li><a href="#">トップ</a></li>
-      <li><a href="#">サービス</a></li>
-      <li><a href="#">会社概要</a></li>
-      <li><a href="#">お問い合わせ</a></li>
+      <li>トップ</li><li>サービス</li><li>会社概要</li><li>お問い合わせ</li>
     </ul>
-    <div class="nav-cta">
-      <a class="btn btn-accent" href="#">お問い合わせ →</a>
-    </div>
   </div>
 </header>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-inner">
+  <div class="hero-grid">
     <div class="hero-text">
       <div class="eyebrow">EST. 1978 / OSAKA, JAPAN</div>
       <h1 class="hero-title">FLUID<br/>UNDER<br/><span class="accent">PRESSURE.</span></h1>
       <p class="hero-sub">産業の血流を、止めない。</p>
       <p class="hero-lead">高圧ホース、油圧機器、各種継手、バルブ — 工場・建機・船舶・プラント。産業現場で流体を扱うすべての場所に、確実な部品と現場対応力を届けています。</p>
       <div class="hero-actions">
-        <a class="btn btn-accent btn-lg" href="#">無料で相談する →</a>
-        <a class="btn btn-ghost btn-lg" href="#">事業内容を見る</a>
+        <span class="btn-a">無料で相談する →</span>
+        <span class="btn-b">事業内容を見る</span>
       </div>
     </div>
     <div class="hero-visual">
-      <img src="https://wataruwatanabe0408.github.io/orito-website-sample/v2/images/hero-worker.webp" alt="hero"/>
+      <span>VISUAL</span>
+      <span>aspect-ratio 1 : φ</span>
     </div>
   </div>
 </section>
 
 <!-- STRIP -->
-<div class="strip" aria-hidden="true">
+<div class="strip">
   <div class="strip-track">
-    <span class="strip-item">HIGH-PRESSURE HOSE</span>
-    <span class="strip-item">HYDRAULIC FITTINGS</span>
-    <span class="strip-item">ON-SITE ASSEMBLY</span>
-    <span class="strip-item">BALL &amp; CHECK VALVES</span>
-    <span class="strip-item">SWIVEL &amp; COUPLER</span>
-    <span class="strip-item">SINCE 1978</span>
-    <span class="strip-item">HIGH-PRESSURE HOSE</span>
-    <span class="strip-item">HYDRAULIC FITTINGS</span>
-    <span class="strip-item">ON-SITE ASSEMBLY</span>
-    <span class="strip-item">BALL &amp; CHECK VALVES</span>
-    <span class="strip-item">SWIVEL &amp; COUPLER</span>
-    <span class="strip-item">SINCE 1978</span>
+    <span class="strip-item">HIGH-PRESSURE HOSE</span><span class="strip-item">HYDRAULIC FITTINGS</span><span class="strip-item">ON-SITE ASSEMBLY</span><span class="strip-item">BALL &amp; CHECK VALVES</span><span class="strip-item">SWIVEL &amp; COUPLER</span><span class="strip-item">SINCE 1978</span>
+    <span class="strip-item">HIGH-PRESSURE HOSE</span><span class="strip-item">HYDRAULIC FITTINGS</span><span class="strip-item">ON-SITE ASSEMBLY</span><span class="strip-item">BALL &amp; CHECK VALVES</span><span class="strip-item">SWIVEL &amp; COUPLER</span><span class="strip-item">SINCE 1978</span>
   </div>
 </div>
 
 <!-- PILLARS -->
-<section class="pillars">
-  <div class="container">
+<section class="section">
+  <div class="wrap">
     <div class="pillars-head">
       <div>
         <div class="eyebrow">/ WHY ORITO</div>
-        <h2 class="pillars-title">THREE<br/>PILLARS<span class="accent">.</span></h2>
+        <h2 class="sec-title">THREE<br/>PILLARS<span class="accent">.</span></h2>
       </div>
-      <p class="pillars-intro">部品を売っているのではありません。<br/>現場の稼働を止めない、を売っています。</p>
+      <p class="intro-txt">部品を売っているのではありません。<br/>現場の稼働を止めない、を売っています。</p>
     </div>
     <div class="pillars-grid">
       <article class="pillar">
         <span class="pillar-num">001 / DELIVERY</span>
         <span class="pillar-en">SPEED</span>
-        <h3 class="pillar-title">最短即日の<br/>出張製作対応</h3>
+        <h3 class="pillar-ttl">最短即日の<br/>出張製作対応</h3>
         <p class="pillar-body">稼働中ラインのホース破断は、1時間が損失数十万円。専用車で現場に駆けつけ、その場でアッセンブリー製作・交換まで完了します。</p>
       </article>
       <article class="pillar">
         <span class="pillar-num">002 / RANGE</span>
         <span class="pillar-en">DEPTH</span>
-        <h3 class="pillar-title">12,000点超の<br/>在庫ネットワーク</h3>
+        <h3 class="pillar-ttl">12,000点超の<br/>在庫ネットワーク</h3>
         <p class="pillar-body">国内外の主要メーカーと直接取引。口金・カプラ・スイベルから油圧バルブまで、標準品から特殊規格まで一括で揃えます。</p>
       </article>
       <article class="pillar">
         <span class="pillar-num">003 / TRUST</span>
         <span class="pillar-en">PROOF</span>
-        <h3 class="pillar-title">創業47年の<br/>技術と信頼</h3>
+        <h3 class="pillar-ttl">創業47年の<br/>技術と信頼</h3>
         <p class="pillar-body">1978年の創業以来、製鉄・建機・造船・食品プラントの現場と歩んできました。仕様の相談からトータルでお応えします。</p>
       </article>
     </div>
@@ -385,105 +188,84 @@ a { text-decoration: none; color: inherit; }
 
 <!-- STATS -->
 <section class="stats">
-  <div class="container">
+  <div class="wrap">
     <div class="stats-grid">
-      <div class="stat"><div class="stat-num">47<span class="stat-unit">YRS</span></div><div class="stat-label">SINCE 1978</div></div>
-      <div class="stat"><div class="stat-num">12,000<span class="stat-unit">+</span></div><div class="stat-label">PARTS IN NETWORK</div></div>
-      <div class="stat"><div class="stat-num">24<span class="stat-unit">H</span></div><div class="stat-label">URGENT RESPONSE</div></div>
-      <div class="stat"><div class="stat-num">600<span class="stat-unit">+</span></div><div class="stat-label">B2B CLIENTS</div></div>
+      <div class="stat"><div class="stat-num">47<span class="stat-unit">YRS</span></div><div class="stat-lbl">SINCE 1978</div></div>
+      <div class="stat"><div class="stat-num">12,000<span class="stat-unit">+</span></div><div class="stat-lbl">PARTS IN NETWORK</div></div>
+      <div class="stat"><div class="stat-num">24<span class="stat-unit">H</span></div><div class="stat-lbl">URGENT RESPONSE</div></div>
+      <div class="stat"><div class="stat-num">600<span class="stat-unit">+</span></div><div class="stat-lbl">B2B CLIENTS</div></div>
     </div>
   </div>
 </section>
 
 <!-- SERVICES -->
-<section class="services">
-  <div class="container">
-    <div class="services-head">
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="svc-head">
       <div>
         <div class="eyebrow">/ BUSINESS LINES</div>
-        <h2 class="services-title">WHAT WE<br/><span style="color:var(--accent)">SUPPLY.</span></h2>
+        <h2 class="sec-title">WHAT WE<br/><span class="accent">SUPPLY.</span></h2>
       </div>
-      <a class="btn btn-ghost" href="#">すべての事業を見る →</a>
+      <span class="btn-b">すべての事業を見る →</span>
     </div>
-    <div class="services-grid">
-      <a class="svc-card" href="#">
-        <div class="svc-visual"><img src="https://wataruwatanabe0408.github.io/orito-website-sample/v2/images/img2.webp" alt=""/></div>
+    <div class="svc-grid">
+      <div class="svc-card">
+        <div class="svc-img">IMAGE 01</div>
         <div class="svc-body">
-          <div class="svc-index"><span>01 / HOSE</span><span>→</span></div>
-          <h3 class="svc-title">高圧ホース・口金・<br/>各種ホースの卸販売</h3>
-          <p class="svc-desc">標準品から特殊仕様までフルラインアップ。</p>
+          <div class="svc-idx"><span>01 / HOSE</span><span>→</span></div>
+          <h3 class="svc-ttl">高圧ホース・口金・<br/>各種ホースの卸販売</h3>
+          <p class="svc-desc">標準品から特殊仕様までフルラインアップ。スイベル・カプラと合わせて一括供給。</p>
         </div>
-      </a>
-      <a class="svc-card" href="#">
-        <div class="svc-visual"><img src="https://wataruwatanabe0408.github.io/orito-website-sample/v2/images/img3.webp" alt=""/></div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-img">IMAGE 02</div>
         <div class="svc-body">
-          <div class="svc-index"><span>02 / MACHINE</span><span>→</span></div>
-          <h3 class="svc-title">アッセンブリー<br/>マシーンの販売</h3>
-          <p class="svc-desc">導入支援から保守までサポート。</p>
+          <div class="svc-idx"><span>02 / MACHINE</span><span>→</span></div>
+          <h3 class="svc-ttl">アッセンブリー<br/>マシーンの販売</h3>
+          <p class="svc-desc">自社製作・現場製作向けの高圧ホース加締機。導入支援から保守までサポート。</p>
         </div>
-      </a>
-      <a class="svc-card" href="#">
-        <div class="svc-visual"><img src="https://wataruwatanabe0408.github.io/orito-website-sample/v2/images/img4.webp" alt=""/></div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-img">IMAGE 03</div>
         <div class="svc-body">
-          <div class="svc-index"><span>03 / FITTING</span><span>→</span></div>
-          <h3 class="svc-title">各種継手類の<br/>卸販売</h3>
-          <p class="svc-desc">図面ベースのご相談にも対応します。</p>
+          <div class="svc-idx"><span>03 / FITTING</span><span>→</span></div>
+          <h3 class="svc-ttl">各種継手類の<br/>卸販売</h3>
+          <p class="svc-desc">国内外の規格に対応する継手・アダプタ類。図面ベースのご相談にも対応します。</p>
         </div>
-      </a>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
 <section class="cta">
-  <div class="container">
+  <div class="wrap">
     <div class="cta-inner">
       <div>
-        <h2 class="cta-title">WORK<br/>WITH US.</h2>
+        <h2 class="cta-ttl">WORK<br/>WITH US.</h2>
         <p class="cta-sub">仕様相談・取引のご検討、お気軽にご連絡ください。</p>
       </div>
-      <a class="btn btn-white btn-lg" href="#">フォームから問い合わせ →</a>
+      <span class="btn-cta">フォームから問い合わせ →</span>
     </div>
   </div>
 </section>
 
-<!-- φ INFO PANEL -->
-<div class="phi-panel">
-  <div class="container">
-    <h3>⬡ 黄金比の適用箇所</h3>
-    <div class="phi-grid">
-      <div class="phi-item">
-        <dt>ヒーロー列比率</dt>
-        <dd>1.618fr : 1fr（テキスト : ビジュアル = φ : 1）<br/>現在: 1.1fr : 1fr</dd>
-      </div>
-      <div class="phi-item">
-        <dt>ヒーロービジュアル アスペクト比</dt>
-        <dd>1 : 1.618（縦長 = 1 : φ）<br/>現在: 4 : 5</dd>
-      </div>
-      <div class="phi-item">
-        <dt>スペーシングスケール</dt>
-        <dd>φ¹=16px / φ²=26px / φ³=42px<br/>φ⁴=68px / φ⁵=110px / φ⁶=178px</dd>
-      </div>
-      <div class="phi-item">
-        <dt>セクション上下余白</dt>
-        <dd>φ⁵ = 110px（現在: 80px / 64px）</dd>
-      </div>
-      <div class="phi-item">
-        <dt>カードグリッドのgap</dt>
-        <dd>φ² = 26px（現在: 1px区切り）</dd>
-      </div>
-      <div class="phi-item">
-        <dt>ヒーロータイトルサイズ</dt>
-        <dd>max 154px ≒ 14 × φ⁵<br/>現在: max 140px</dd>
-      </div>
-    </div>
+<!-- φ INFO -->
+<div class="phi-info">
+  <div class="wrap">
+    <h3>⬡ 黄金比の変更点</h3>
+    <table class="phi-table">
+      <tr><th>ヒーロー列比率</th><td><span class="old">1.1fr 1fr</span> → <span class="new">1.618fr 1fr（φ:1）</span></td></tr>
+      <tr><th>ヒーロービジュアル アスペクト比</th><td><span class="old">4:5</span> → <span class="new">1:1.618（1:φ）</span></td></tr>
+      <tr><th>セクション上下余白</th><td><span class="old">64〜80px</span> → <span class="new">110px（φ⁵）</span></td></tr>
+      <tr><th>ピラーカード padding</th><td><span class="old">均等</span> → <span class="new">上 42px（φ³）/ 下 68px（φ⁴）</span></td></tr>
+      <tr><th>サービスカード gap</th><td><span class="old">1px区切り</span> → <span class="new">26px（φ²）</span></td></tr>
+      <tr><th>スペーシングスケール</th><td><span class="new">16 / 26 / 42 / 68 / 110 / 178px</span></td></tr>
+    </table>
   </div>
 </div>
 
-<!-- FOOTER -->
-<footer class="footer">
-  <p>© 株式会社オリト ALL RIGHTS RESERVED.</p>
-</footer>
+<footer><p>© 株式会社オリト ALL RIGHTS RESERVED.</p></footer>
 
 </body>
 </html>
