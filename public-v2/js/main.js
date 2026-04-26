@@ -1,4 +1,13 @@
-// Reveal on scroll
+// Hero / page-header: fire with exact delays on load (bypass observer)
+const DELAY_MAP = { 'reveal--delay-1': 100, 'reveal--delay-2': 200, 'reveal--delay-3': 300 };
+
+document.querySelectorAll('.hero .reveal, .page-header .reveal').forEach((el) => {
+  let delay = 80;
+  Object.entries(DELAY_MAP).forEach(([cls, ms]) => { if (el.classList.contains(cls)) delay = ms; });
+  setTimeout(() => el.classList.add('is-in'), delay);
+});
+
+// Reveal on scroll (below-the-fold elements)
 const io = new IntersectionObserver((entries) => {
   entries.forEach((e) => {
     if (e.isIntersecting) {
@@ -8,7 +17,9 @@ const io = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.12 });
 
-document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+document.querySelectorAll('.reveal').forEach((el) => {
+  if (!el.closest('.hero, .page-header')) io.observe(el);
+});
 
 // Hamburger / mobile menu
 (() => {
