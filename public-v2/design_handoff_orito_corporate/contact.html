@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>お問い合わせ | 株式会社オリト</title>
+<meta name="description" content="株式会社オリトへのお問い合わせフォーム。仕様のご相談、お見積もり、出張製作のご依頼まで、お気軽にご連絡ください。" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=M+PLUS+Rounded+1c:wght@500;700;800&family=Noto+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="nav-banner">高圧ホースの出張製作対応 / お見積もり・技術相談無料</div>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo" aria-label="株式会社オリト ホーム">
+      <span class="nav__logo-mark">O</span>
+      <span>ORITO</span>
+    </a>
+    <nav>
+      <ul class="nav__links">
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="company.html">会社概要</a></li>
+        <li><a href="service.html">事業内容</a></li>
+        <li><a href="contact.html" style="color:var(--c-accent)">お問い合わせ</a></li>
+      </ul>
+    </nav>
+    <div class="nav__cta">
+      <a href="tel:06-0000-0000" class="btn btn--ghost btn--sm">06-XXXX-XXXX</a>
+      <button class="nav__hamburger" aria-label="メニューを開く" aria-controls="mobile-menu" aria-expanded="false" type="button">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="menu" id="mobile-menu" aria-hidden="true" aria-label="モバイルナビゲーション">
+  <ul class="menu__list">
+    <li><a href="index.html">ホーム<span class="en">HOME</span></a></li>
+    <li><a href="company.html">会社概要<span class="en">COMPANY</span></a></li>
+    <li><a href="service.html">事業内容<span class="en">SERVICE</span></a></li>
+    <li><a href="contact.html" class="is-current">お問い合わせ<span class="en">CONTACT</span></a></li>
+  </ul>
+  <div class="menu__footer">
+    <span class="meta">CALL US</span>
+    <a href="tel:0600000000" class="tel">06-XXXX-XXXX</a>
+    <span class="meta">平日 9:00 – 18:00</span>
+    <a href="contact.html" class="btn btn--accent btn--lg">フォームから問い合わせ <span class="arrow">→</span></a>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<section class="page-header">
+  <div class="container">
+    <div class="crumbs"><a href="index.html">HOME</a><span class="sep">/</span>CONTACT</div>
+    <div class="page-header__inner">
+      <div class="reveal">
+        <div class="page-header__eyebrow eyebrow">/ GET IN TOUCH</div>
+        <h1 class="page-header__title">LET'S<br/>TALK<span class="accent">.</span></h1>
+        <p class="page-header__sub">仕様の相談、ひと言からどうぞ。</p>
+      </div>
+      <div class="reveal reveal--delay-1">
+        <p class="page-header__lead">
+          フォームからのお問い合わせには、原則 1 営業日以内にご返信します。
+          お急ぎの場合はお電話を、図面ベースのご相談はメール添付でも承ります。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+
+      <aside class="contact-info reveal">
+        <h3>お電話で</h3>
+        <ul>
+          <li style="font-family:var(--f-display);font-size:32px;color:var(--c-black);letter-spacing:0.02em;line-height:1.1;">06-XXXX-XXXX</li>
+          <li>平日 9:00 – 18:00（土日祝休）</li>
+        </ul>
+
+        <h3>メールで</h3>
+        <ul>
+          <li><a href="mailto:info@orito.example" style="color:var(--c-link);text-decoration:underline;">info@orito.example</a></li>
+        </ul>
+
+        <h3>FAXで</h3>
+        <ul>
+          <li>06-XXXX-XXXX（24時間受付）</li>
+        </ul>
+
+        <div style="margin-top:32px;padding:20px;background:var(--c-surface);border-left:3px solid var(--c-accent);">
+          <div class="eyebrow" style="margin-bottom:8px;color:var(--c-accent);">緊急時の出張製作</div>
+          <p style="font-size:13px;line-height:1.8;color:var(--c-text);margin:0;">
+            ライン停止中など緊急のご依頼は、まずお電話ください。
+            最短即日で現場へお伺いします。
+          </p>
+        </div>
+      </aside>
+
+      <form class="form reveal reveal--delay-1" action="https://formspree.io/f/yourFormID" method="POST" novalidate>
+
+        <div class="form__success" id="form-success">送信が完了しました。1営業日以内にご返信いたします。</div>
+        <div class="form__error" id="form-error">送信に失敗しました。お手数ですが、もう一度お試しください。</div>
+
+        <div class="form-grid-2">
+          <div class="field">
+            <label class="field__label" for="company">会社名 <span class="req">REQ</span></label>
+            <input class="input" type="text" id="company" name="company" required placeholder="株式会社〇〇" />
+          </div>
+          <div class="field">
+            <label class="field__label" for="name">ご担当者名 <span class="req">REQ</span></label>
+            <input class="input" type="text" id="name" name="name" required placeholder="山田 太郎" />
+          </div>
+        </div>
+
+        <div class="form-grid-2">
+          <div class="field">
+            <label class="field__label" for="email">メールアドレス <span class="req">REQ</span></label>
+            <input class="input" type="email" id="email" name="email" required placeholder="name@example.com" />
+          </div>
+          <div class="field">
+            <label class="field__label" for="phone">電話番号</label>
+            <input class="input" type="tel" id="phone" name="phone" placeholder="06-XXXX-XXXX" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="topic">お問い合わせ種別 <span class="req">REQ</span></label>
+          <select class="select" id="topic" name="topic" required>
+            <option value="">選択してください</option>
+            <option>高圧ホース・部品のお見積もり</option>
+            <option>アッセンブリーマシーンについて</option>
+            <option>継手・バルブ・油圧機器について</option>
+            <option>出張製作のご依頼</option>
+            <option>新規お取引のご相談</option>
+            <option>その他</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="message">お問い合わせ内容 <span class="req">REQ</span></label>
+          <textarea class="textarea" id="message" name="message" required placeholder="ご相談内容、ご希望の納期、規格・寸法などを記載ください。図面はメール（info@orito.example）に添付でも結構です。"></textarea>
+          <span class="field__hint">仕様が未確定でも構いません。用途・流体・圧力など、わかる範囲でご記入ください。</span>
+        </div>
+
+        <label class="checkbox-row">
+          <input type="checkbox" required />
+          <span><a href="privacy.html">プライバシーポリシー</a>に同意のうえ送信します。 <span class="req" style="color:var(--c-accent);">REQ</span></span>
+        </label>
+
+        <button type="submit" class="btn btn--accent btn--lg form__submit">
+          送信する <span class="arrow">→</span>
+        </button>
+      </form>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a href="index.html" class="nav__logo" style="color:#fff">
+          <span class="nav__logo-mark">O</span>
+          <span>ORITO</span>
+        </a>
+        <p class="footer__lead">株式会社オリト — 高圧ホース・油圧機器の卸売販売。1978年大阪創業。産業現場の流体を支える専門商社です。</p>
+      </div>
+      <div class="footer__col">
+        <h4>SITEMAP</h4>
+        <ul>
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="company.html">会社概要</a></li>
+          <li><a href="service.html">事業内容</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>BUSINESS</h4>
+        <ul>
+          <li><a href="service.html">高圧ホース卸販売</a></li>
+          <li><a href="service.html">アッセンブリーマシーン</a></li>
+          <li><a href="service.html">継手・フィッティング</a></li>
+          <li><a href="service.html">出張製作</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>CONTACT</h4>
+        <ul>
+          <li>大阪府〇〇市〇〇</li>
+          <li>TEL: 06-XXXX-XXXX</li>
+          <li>FAX: 06-XXXX-XXXX</li>
+          <li>平日 9:00–18:00</li>
+          <li><a href="privacy.html">プライバシーポリシー</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 ORITO CO., LTD.</span>
+      <span>FLUID UNDER PRESSURE.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+// Lightweight client-side enhancement for Formspree
+const form = document.querySelector('form.form');
+if (form) {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const success = document.getElementById('form-success');
+    const error = document.getElementById('form-error');
+    success.classList.remove('is-shown');
+    error.classList.remove('is-shown');
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        form.reset();
+        success.classList.add('is-shown');
+        success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        error.classList.add('is-shown');
+      }
+    } catch (err) {
+      error.classList.add('is-shown');
+    }
+  });
+}
+</script>
+</body>
+</html>
