@@ -11,7 +11,7 @@
   --c-black: #111111;
   --c-white: #FFFFFF;
   --c-snow: #FAFAFA;
-  --c-surface: #F5F5F5;
+  --c-surface: #F5F7FA;
   --c-hover: #E5E5E5;
   --c-border: #CACACB;
   --c-text: #111111;
@@ -53,7 +53,7 @@
 html, body {
   margin: 0;
   padding: 0;
-  background: var(--c-white);
+  background: #F5F7FA;
   color: var(--c-text);
   font-family: var(--f-body);
   font-size: 16px;
@@ -363,7 +363,7 @@ body.menu-open { overflow: hidden; }
 /* ---------- Hero ---------- */
 
 .hero {
-  background: var(--c-white);
+  background: var(--c-surface);
   padding: var(--s-9) 0 var(--s-10);
   border-bottom: 1px solid var(--c-hover);
 }
@@ -432,6 +432,13 @@ body.menu-open { overflow: hidden; }
   aspect-ratio: 4 / 5;
   background: var(--c-surface);
   overflow: hidden;
+}
+
+.hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 @media (max-width: 960px) {
