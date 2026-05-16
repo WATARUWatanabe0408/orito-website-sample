@@ -210,19 +210,19 @@
   <div class="container">
     <div class="stats__grid">
       <div class="stat reveal">
-        <div class="stat__num">47<span class="unit">YRS</span></div>
+        <div class="stat__num"><span class="countup" data-target="47">0</span><span class="unit">YRS</span></div>
         <div class="stat__label">SINCE 1978</div>
       </div>
       <div class="stat reveal reveal--delay-1">
-        <div class="stat__num">12,000<span class="unit">+</span></div>
+        <div class="stat__num"><span class="countup" data-target="12000">0</span><span class="unit">+</span></div>
         <div class="stat__label">PARTS IN NETWORK</div>
       </div>
       <div class="stat reveal reveal--delay-2">
-        <div class="stat__num">24<span class="unit">H</span></div>
+        <div class="stat__num"><span class="countup" data-target="24">0</span><span class="unit">H</span></div>
         <div class="stat__label">URGENT RESPONSE</div>
       </div>
       <div class="stat reveal reveal--delay-3">
-        <div class="stat__num">600<span class="unit">+</span></div>
+        <div class="stat__num"><span class="countup" data-target="600">0</span><span class="unit">+</span></div>
         <div class="stat__label">B2B CLIENTS</div>
       </div>
     </div>
@@ -300,5 +300,38 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script>
+(function () {
+  function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+
+  function startCountUp(el) {
+    const target = +el.dataset.target;
+    const duration = 1400;
+    const large = target >= 1000;
+    const start = performance.now();
+    function tick(now) {
+      const t = Math.min((now - start) / duration, 1);
+      const val = Math.round(easeOut(t) * target);
+      el.textContent = large ? val.toLocaleString() : val;
+      if (t < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  const observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        const delay = parseFloat(entry.target.closest('[class*="delay"]')?.style.animationDelay || 0) * 1000;
+        setTimeout(function () { startCountUp(entry.target); }, delay);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('.countup').forEach(function (el) {
+    observer.observe(el);
+  });
+})();
+</script>
 </body>
 </html>
