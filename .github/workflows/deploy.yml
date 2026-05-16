@@ -24,9 +24,10 @@ jobs:
       - uses: actions/checkout@v4
       - name: Prepare deploy directory
         run: |
-          mkdir -p _deploy/v2
+          mkdir -p _deploy/v2 _deploy/v3
           cp -r public/. _deploy/
           cp -r public-v2/. _deploy/v2/
+          cp -r public-v3/site/. _deploy/v3/
       - uses: actions/configure-pages@v4
       - uses: actions/upload-pages-artifact@v3
         with:
