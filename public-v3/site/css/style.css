@@ -230,7 +230,7 @@ p { margin: 0; }
 }
 .footer .nav__logo-img {
   height: 32px;
-  content: url("../images/logo-white.png");
+  content: url("../images/logo-white.webp");
   filter: none;
 }
 
