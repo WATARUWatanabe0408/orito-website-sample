@@ -1056,8 +1056,9 @@ body.menu-open { overflow: hidden; }
 .stat {
   border-left: 1px solid rgba(255,255,255,0.18);
   padding: 0 var(--s-5);
+  text-align: center;
 }
-.stat:first-child { border-left: none; padding-left: 0; }
+.stat:first-child { border-left: none; padding-left: var(--s-5); }
 
 .stat__num {
   font-family: var(--f-display);
